@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Stadi Research and Analytics</title>
+  <meta content="Stadi Research & Analytics - Unleashing the power of data." name="description">
+  <meta content="data analytics, research, consulting, baseline survey, business analytics, Kenya" name="keywords">
+
+  <link href="assets/img/Logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <a href="index.html"><img src="assets/img/Logo.png" alt="Stadi Analytics" class="img-fluid"></a>
+      </div>
+      <div class="header-nav-right">
+        <button class="header-nav-link" id="servicesDropdownBtn">Services <i class="bi bi-chevron-down"></i></button>
+        <a href="contact.html" class="header-cta-btn">Get in Touch</a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open Menu">
+          <span></span>
+          <span class="accent-line"></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Services Mega Dropdown -->
+  <div class="mega-dropdown" id="megaDropdown">
+    <div class="mega-dropdown-inner">
+      <div class="mega-col mega-col-services">
+        <h3>Our Services</h3>
+        <div class="mega-service-item">
+          <div class="mega-service-icon"><i class="bi bi-clipboard-data"></i></div>
+          <div>
+            <h4><a href="services.html">Baseline Survey</a></h4>
+            <p>Designing and implementing baseline surveys, mid-term evaluations, and impact assessments.</p>
+          </div>
+        </div>
+        <div class="mega-service-item">
+          <div class="mega-service-icon"><i class="bi bi-graph-up-arrow"></i></div>
+          <div>
+            <h4><a href="services.html">Business Analytics</a></h4>
+            <p>Unlocking valuable insights for data-driven strategies and informed decision-making.</p>
+          </div>
+        </div>
+        <div class="mega-service-item">
+          <div class="mega-service-icon"><i class="bi bi-mortarboard"></i></div>
+          <div>
+            <h4><a href="services.html">Training & Capacity</a></h4>
+            <p>Comprehensive training in research methodology, data collection, and predictive analytics.</p>
+          </div>
+        </div>
+        <div class="mega-service-item">
+          <div class="mega-service-icon"><i class="bi bi-bar-chart-line"></i></div>
+          <div>
+            <h4><a href="services.html">Data Analytics</a></h4>
+            <p>Statistical and machine learning techniques to analyze, visualize, and report data insights.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mega-col mega-col-links">
+        <h3>Sectors</h3>
+        <ul>
+          <li><a href="services.html">Government & NGO</a></li>
+          <li><a href="services.html">Agriculture</a></li>
+          <li><a href="services.html">Banking & Finance</a></li>
+        </ul>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="team.html">Our Team</a></li>
+        </ul>
+        <h3>Insights</h3>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="portfolio-details.html">Portfolio</a></li>
+        </ul>
+        <h3><a href="contact.html">Contact</a></h3>
+        <div class="mega-social">
+          <a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://twitter.com/Stadi_Analytics" target="_blank"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Nav Overlay -->
+  <div class="nav-overlay" id="navOverlay">
+    <button class="nav-overlay-close" id="navClose">&times;</button>
+    <nav class="overlay-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio-details.html">Portfolio</a></li>
+        <li><a href="blog.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="overlay-nav-social">
+        <a href="https://twitter.com/Stadi_Analytics" target="_blank"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-bg-overlay"></div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">End-to-End Research & Analytics <span class="eyebrow-dash">—</span></span>
+      <h1>
+        Unleashing the<br>
+        power of <span class="typewriter-wrap">
+          <span class="typewriter" id="heroTypewriter"></span><span class="cursor">_</span>
+        </span>
+      </h1>
+      <p class="hero-subtitle">For Government | NGO | Agriculture | Banking | Healthcare</p>
+      <div class="hero-ctas">
+        <a href="services.html" class="btn-primary-cta">Our Services <span class="btn-plus">+</span></a>
+        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="btn-outline-cta glightbox">
+          <span class="play-icon-circle"><i class="bi bi-play-fill"></i></span> Overview
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-accent-wedge"></div>
+    <div class="hero-dot-grid"></div>
+    <div class="hero-geo-shape"></div>
+  </section>
+
+  <main id="main">
+
+    <!-- ======= About Intro ======= -->
+    <section id="about-intro" class="about-intro">
+      <div class="container">
+        <div class="fade-in-up">
+          <span class="section-label">About Us</span>
+          <h2 class="about-intro-heading">We're Stadi Research & Analytics: a dedicated and specialist team of
+            data professionals, and your trusted partners in research, analytics, and data-driven transformation.</h2>
+          <p class="about-intro-text">Founded with a vision to deliver precision and reliability, Stadi Research & Analytics
+            provides cutting-edge data-based insights that empower organisations to make informed decisions. We combine
+            deep expertise in research methodology with advanced analytical techniques to deliver actionable results.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Services Tabs ======= -->
+    <section id="services-tabs" class="services-tabs">
+      <div class="container">
+        <div class="section-header fade-in-up" style="text-align:left; margin-bottom:40px;">
+          <span class="section-label">What We Do</span>
+          <h2>Our Services</h2>
+        </div>
+        <div class="row service-tab-cards">
+          <div class="col-lg-3 col-md-6">
+            <a href="#service-baseline" class="service-tab-card active fade-in-up">
+              <div class="service-tab-icon"><i class="bi bi-clipboard-data"></i></div>
+              <h3>Baseline Survey</h3>
+              <span class="tab-link">Learn more <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <a href="#service-analytics" class="service-tab-card fade-in-up">
+              <div class="service-tab-icon"><i class="bi bi-graph-up-arrow"></i></div>
+              <h3>Business Analytics</h3>
+              <span class="tab-link">Learn more <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <a href="#service-training" class="service-tab-card fade-in-up">
+              <div class="service-tab-icon"><i class="bi bi-mortarboard"></i></div>
+              <h3>Training & Capacity</h3>
+              <span class="tab-link">Learn more <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <a href="#service-data" class="service-tab-card fade-in-up">
+              <div class="service-tab-icon"><i class="bi bi-bar-chart-line"></i></div>
+              <h3>Data Analytics</h3>
+              <span class="tab-link">Learn more <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Service Detail 1 ======= -->
+    <section id="service-baseline" class="service-detail section-dark diagonal-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 service-img-wrap fade-in-up">
+            <div class="service-img">
+              <img src="assets/img/stadi_1.jpg" alt="Baseline Survey" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-6 service-text fade-in-up">
+            <span class="section-label">Service</span>
+            <div class="service-icon"><i class="bi bi-clipboard-data"></i></div>
+            <h2>Baseline Survey</h2>
+            <p>We have the best expertise in designing and implementing baseline surveys,
+              mid-term, outcome and impact assessments of policy, projects and programmes.</p>
+            <p>We also support development of M&E frameworks, indicators and M&E work plans
+              that drive evidence-based decision making across sectors.</p>
+            <a href="services.html" class="btn-primary-cta">Learn More <span class="btn-plus">+</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Service Detail 2 ======= -->
+    <section id="service-analytics" class="service-detail section-light diagonal-bottom">
+      <div class="container">
+        <div class="row align-items-center flex-lg-row-reverse">
+          <div class="col-lg-6 service-img-wrap fade-in-up">
+            <div class="service-img">
+              <img src="assets/img/homepage_2.jpg" alt="Business Analytics" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-6 service-text fade-in-up">
+            <span class="section-label">Service</span>
+            <div class="service-icon"><i class="bi bi-graph-up-arrow"></i></div>
+            <h2>Business Analytics</h2>
+            <p>Our business analytics services unlock valuable insights for data-driven
+              strategies and informed decision-making. With advanced tools and methodologies,
+              we help businesses uncover trends and optimize operations.</p>
+            <p>We identify growth opportunities, enabling organisations to thrive in a
+              competitive market through evidence-based strategy.</p>
+            <a href="services.html" class="btn-primary-cta">Learn More <span class="btn-plus">+</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Service Detail 3 ======= -->
+    <section id="service-training" class="service-detail section-dark diagonal-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 service-img-wrap fade-in-up">
+            <div class="service-img">
+              <img src="assets/img/homepage_1.jpg" alt="Training" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-6 service-text fade-in-up">
+            <span class="section-label">Service</span>
+            <div class="service-icon"><i class="bi bi-mortarboard"></i></div>
+            <h2>Training & Capacity Development</h2>
+            <p>We offer comprehensive training and capacity development programs,
+              equipping clients with the essential skills and knowledge to excel in research,
+              data collection, M&E, and predictive analytics.</p>
+            <p>Our expert-led training empowers individuals and organizations to leverage
+              data effectively, drive innovation, and achieve their goals.</p>
+            <a href="services.html" class="btn-primary-cta">Learn More <span class="btn-plus">+</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Service Detail 4 ======= -->
+    <section id="service-data" class="service-detail section-light diagonal-bottom">
+      <div class="container">
+        <div class="row align-items-center flex-lg-row-reverse">
+          <div class="col-lg-6 service-img-wrap fade-in-up">
+            <div class="service-img">
+              <img src="assets/img/stadi_1.jpg" alt="Data Analytics" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-6 service-text fade-in-up">
+            <span class="section-label">Service</span>
+            <div class="service-icon"><i class="bi bi-bar-chart-line"></i></div>
+            <h2>Data Analytics & Visualization</h2>
+            <p>We employ statistical and machine learning techniques to analyze, visualize
+              and report data insights. We develop robust models to help identify patterns
+              in the data and perform predictive analytics.</p>
+            <p>Our approach ensures that data tells a clear story, enabling stakeholders to
+              make confident, informed decisions.</p>
+            <a href="services.html" class="btn-primary-cta">Learn More <span class="btn-plus">+</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Sectors ======= -->
+    <section id="sectors" class="sectors section-dark diagonal-bottom">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-label">Sectors</span>
+          <h2>Sectors We Specialise In</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6">
+            <div class="sector-card fade-in-up">
+              <div class="sector-icon"><i class="bi bi-bank2"></i></div>
+              <h3>Government & NGO</h3>
+              <p>Supporting public sector and development organisations with rigorous research
+                methodologies, M&E frameworks, and data-driven policy insights.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="sector-card fade-in-up">
+              <div class="sector-icon"><i class="bi bi-tree"></i></div>
+              <h3>Agriculture</h3>
+              <p>Delivering baseline surveys, impact assessments, and analytical solutions
+                that drive sustainable agricultural development and food security.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="sector-card fade-in-up">
+              <div class="sector-icon"><i class="bi bi-building"></i></div>
+              <h3>Banking & Finance</h3>
+              <p>Empowering financial institutions with business analytics, customer insights,
+                and predictive models for strategic growth and risk management.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Why Choose Us ======= -->
+    <section id="why-us" class="why-us section-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 fade-in-up">
+            <span class="section-label">Why Us</span>
+            <h2>Why Choose Stadi Analytics?</h2>
+            <p class="why-us-intro">At Stadi Research & Analytics, we take great pride in being your trustworthy research partner,
+              providing precise and illuminating solutions that facilitate your decision-making.</p>
+            <ul class="why-us-list">
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <div>
+                  <strong>Expertise in Research & Analytics</strong>
+                  <span>Our team combines deep domain knowledge with advanced analytical capabilities to deliver precise, actionable insights.</span>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <div>
+                  <strong>Tailored Solutions</strong>
+                  <span>Every engagement is customised to address your unique challenges, ensuring maximum relevance and impact.</span>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <div>
+                  <strong>Cutting-edge Data Insights</strong>
+                  <span>We leverage the latest statistical and machine learning techniques to uncover patterns and predict outcomes.</span>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <div>
+                  <strong>Proven Track Record</strong>
+                  <span>With years of experience and numerous successful projects, we have a demonstrated history of delivering results.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="stats-grid">
+              <div class="stat-box fade-in-up">
+                <span class="stat-number" data-purecounter-start="0" data-purecounter-end="13">0</span>
+                <span class="stat-label">Happy Clients</span>
+              </div>
+              <div class="stat-box fade-in-up">
+                <span class="stat-number" data-purecounter-start="0" data-purecounter-end="13">0</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="stat-box fade-in-up">
+                <span class="stat-number" data-purecounter-start="0" data-purecounter-end="7">0</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat-box fade-in-up">
+                <span class="stat-number" data-purecounter-start="0" data-purecounter-end="6">0</span>
+                <span class="stat-label">Core Services</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Testimonials ======= -->
+    <section id="testimonials" class="testimonials section-dark">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-label">Client Feedback</span>
+          <h2>What Our Clients Say</h2>
+        </div>
+        <div class="testimonials-slider swiper fade-in-up">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <p>"Stadi provided exceptional research and insight that directly improved our programme outcomes. Their methodology was rigorous and their team was a pleasure to work with."</p>
+                <div class="testimonial-author">
+                  <strong>Programme Director</strong>
+                  <span>Government Agency, Kenya</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <p>"The data analytics and visualization capabilities at Stadi are outstanding. They helped us uncover trends we had completely missed, leading to a 30% improvement in our decision-making process."</p>
+                <div class="testimonial-author">
+                  <strong>Head of Strategy</strong>
+                  <span>Financial Institution, East Africa</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <p>"Their training programmes transformed our team's capacity for data collection and analysis. We now have the skills to conduct baseline surveys independently, which has been invaluable."</p>
+                <div class="testimonial-author">
+                  <strong>M&E Manager</strong>
+                  <span>International NGO</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials-controls">
+            <button class="swiper-button-prev testimonial-prev"><i class="bi bi-arrow-left"></i></button>
+            <button class="swiper-button-next testimonial-next"><i class="bi bi-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Clients ======= -->
+    <section id="clients" class="clients section-light">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-label">Partners</span>
+          <h2>Trusted By Industry Leaders</h2>
+        </div>
+        <div class="clients-grid">
+          <div class="client-logo fade-in-up"><img src="assets/img/clients/Banking.png" alt="Banking" class="img-fluid"></div>
+          <div class="client-logo fade-in-up"><img src="assets/img/clients/Retail.png" alt="Retail" class="img-fluid"></div>
+          <div class="client-logo fade-in-up"><img src="assets/img/clients/Agriculture.png" alt="Agriculture" class="img-fluid"></div>
+          <div class="client-logo fade-in-up"><img src="assets/img/clients/NGO.png" alt="NGO" class="img-fluid"></div>
+          <div class="client-logo fade-in-up"><img src="assets/img/clients/Insurance.png" alt="Insurance" class="img-fluid"></div>
+          <div class="client-logo fade-in-up"><img src="assets/img/clients/Education.png" alt="Education" class="img-fluid"></div>
+          <div class="client-logo fade-in-up"><img src="assets/img/clients/Government.png" alt="Government" class="img-fluid"></div>
+          <div class="client-logo fade-in-up"><img src="assets/img/clients/Logistics.png" alt="Logistics" class="img-fluid"></div>
+          <div class="client-logo fade-in-up"><img src="assets/img/clients/Construction.png" alt="Construction" class="img-fluid"></div>
+          <div class="client-logo fade-in-up"><img src="assets/img/clients/Legal.png" alt="Legal" class="img-fluid"></div>
+          <div class="client-logo fade-in-up"><img src="assets/img/clients/Manufacturing.png" alt="Manufacturing" class="img-fluid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Insights Preview ======= -->
+    <section id="insights-preview" class="insights-preview section-dark">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-label">Insights</span>
+          <h2>Latest from Stadi</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 fade-in-up">
+            <a href="blog.html" class="insight-card">
+              <div class="insight-card-img"><img src="assets/img/blog/blog-1.jpg" alt="Blog Post" class="img-fluid"></div>
+              <div class="insight-card-body">
+                <span class="insight-tag">Research</span>
+                <h4>The Role of Baseline Surveys in Evidence-Based Development</h4>
+                <span class="insight-link">Read more <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 fade-in-up">
+            <a href="blog.html" class="insight-card">
+              <div class="insight-card-img"><img src="assets/img/blog/blog-4.jpg" alt="Blog Post" class="img-fluid"></div>
+              <div class="insight-card-body">
+                <span class="insight-tag">Analytics</span>
+                <h4>How Data Analytics is Transforming Agriculture in East Africa</h4>
+                <span class="insight-link">Read more <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 fade-in-up">
+            <a href="blog.html" class="insight-card">
+              <div class="insight-card-img"><img src="assets/img/blog/blog-recent-1.jpg" alt="Blog Post" class="img-fluid"></div>
+              <div class="insight-card-body">
+                <span class="insight-tag">Training</span>
+                <h4>Building Data Capacity in the NGO Sector: Lessons Learned</h4>
+                <span class="insight-link">Read more <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="text-center mt-5 fade-in-up">
+          <a href="blog.html" class="btn-outline-cta">View All Insights <span class="btn-plus">→</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-cta-row">
+      <div class="container fade-in-up">
+        <span class="section-label">Work With Us</span>
+        <h2>Find out how Stadi Analytics can<br>transform your data into actionable insights</h2>
+        <a href="contact.html" class="btn-primary-cta">Get In Touch <span class="btn-plus">+</span></a>
+      </div>
+    </div>
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-col">
+            <div class="footer-logo"><img src="assets/img/Logo.png" alt="Stadi Analytics" class="img-fluid"></div>
+            <div class="footer-social">
+              <a href="https://twitter.com/Stadi_Analytics" target="_blank"><i class="bi bi-twitter-x"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=100083039181812" target="_blank"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/stadianalytics_/" target="_blank"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 footer-col">
+            <h4>About Us</h4>
+            <ul><li><a href="about.html">About</a></li><li><a href="team.html">Our Team</a></li></ul>
+          </div>
+          <div class="col-lg-2 col-md-6 footer-col">
+            <h4>Services</h4>
+            <ul><li><a href="services.html">Baseline Survey</a></li><li><a href="services.html">Business Analytics</a></li><li><a href="services.html">Training</a></li><li><a href="services.html">Data Analytics</a></li><li><a href="services.html">Data Collection</a></li></ul>
+          </div>
+          <div class="col-lg-2 col-md-6 footer-col">
+            <h4>Company</h4>
+            <ul><li><a href="blog.html">Insights</a></li><li><a href="portfolio-details.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-col footer-address">
+            <h4>Nairobi Office</h4>
+            <p>Ngara Road, off Muranga Road<br>P.O Box 51042 - 00200, Nairobi<br>Kenya</p>
+            <p class="footer-contact-info">
+              <a href="tel:+254702795943">+254 702 795 943</a><br>
+              <a href="tel:+254797284425">+254 797 284 425</a><br>
+              <a href="mailto:hello@stadianalytics.com">hello@stadianalytics.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container d-flex justify-content-between align-items-center flex-wrap">
+        <div class="copyright">&copy; <span id="year"></span> Stadi Research & Analytics. All Rights Reserved.</div>
+        <div class="footer-links"><a href="#">Terms & Conditions</a><a href="#">Privacy Policy</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
