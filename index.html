@@ -6,10 +6,10 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Stadi Research and Analytics</title>
-  <meta content="Stadi Research & Analytics - Unleashing the power of data." name="description">
-  <meta content="data analytics, research, consulting, baseline survey, business analytics, Kenya" name="keywords">
+  <meta content="Stadi Research & Analytics - Research, analytics and custom software solutions that turn data into impact." name="description">
+  <meta content="data analytics, research, consulting, baseline survey, software solutions, application development, Kenya" name="keywords">
 
-  <link href="assets/img/Logo.png" rel="icon">
+  <link href="assets/img/Logo-transparent.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container-fluid d-flex align-items-center justify-content-between">
       <div class="logo">
-        <a href="index.html"><img src="assets/img/Logo.png" alt="Stadi Analytics" class="img-fluid"></a>
+        <a href="index.html"><img src="assets/img/Logo-transparent.png" alt="Stadi Analytics" class="img-fluid"></a>
       </div>
       <div class="header-nav-right">
         <button class="header-nav-link" id="servicesDropdownBtn">Services <i class="bi bi-chevron-down"></i></button>
@@ -52,6 +52,13 @@
           <div>
             <h4><a href="services.html">Baseline Survey</a></h4>
             <p>Designing and implementing baseline surveys, mid-term evaluations, and impact assessments.</p>
+          </div>
+        </div>
+        <div class="mega-service-item">
+          <div class="mega-service-icon"><i class="bi bi-code-square"></i></div>
+          <div>
+            <h4><a href="services.html">Solutions & Applications</a></h4>
+            <p>Custom dashboards, data platforms and web/mobile applications that turn insight into action.</p>
           </div>
         </div>
         <div class="mega-service-item">
@@ -126,27 +133,47 @@
   <section id="hero">
     <div class="hero-bg" id="heroBg"></div>
     <div class="hero-bg-overlay"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
 
     <div class="hero-content">
-      <span class="hero-eyebrow">End-to-End Research & Analytics <span class="eyebrow-dash">—</span></span>
+      <span class="hero-eyebrow">Research · Analytics · Software Solutions</span>
       <h1>
-        Unleashing the<br>
-        power of <span class="typewriter-wrap">
+        Turning data into<br>
+        <span class="typewriter-wrap">
           <span class="typewriter" id="heroTypewriter"></span><span class="cursor">_</span>
         </span>
       </h1>
-      <p class="hero-subtitle">For Government | NGO | Agriculture | Banking | Healthcare</p>
+      <p class="hero-subtitle">Research, analytics and custom applications for Government | NGO | Agriculture | Banking | Healthcare</p>
       <div class="hero-ctas">
-        <a href="services.html" class="btn-primary-cta">Our Services <span class="btn-plus">+</span></a>
+        <a href="services.html" class="btn-primary-cta"><span style="position:relative;z-index:1">Our Services</span> <span class="btn-plus">+</span></a>
         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="btn-outline-cta glightbox">
           <span class="play-icon-circle"><i class="bi bi-play-fill"></i></span> Overview
         </a>
       </div>
     </div>
 
+    <!-- Animated data visualization -->
+    <div class="hero-data-viz">
+      <div class="viz-ring"></div>
+      <div class="viz-ring"></div>
+      <div class="viz-ring"></div>
+      <div class="viz-bars">
+        <div class="viz-bar"></div>
+        <div class="viz-bar"></div>
+        <div class="viz-bar"></div>
+        <div class="viz-bar"></div>
+        <div class="viz-bar"></div>
+        <div class="viz-bar"></div>
+      </div>
+      <div class="viz-float-dot"></div>
+      <div class="viz-float-dot"></div>
+      <div class="viz-float-dot"></div>
+      <div class="viz-float-dot"></div>
+    </div>
+
     <div class="hero-accent-wedge"></div>
     <div class="hero-dot-grid"></div>
-    <div class="hero-geo-shape"></div>
   </section>
 
   <main id="main">
@@ -156,11 +183,13 @@
       <div class="container">
         <div class="fade-in-up">
           <span class="section-label">About Us</span>
-          <h2 class="about-intro-heading">We're Stadi Research & Analytics: a dedicated and specialist team of
-            data professionals, and your trusted partners in research, analytics, and data-driven transformation.</h2>
-          <p class="about-intro-text">Founded with a vision to deliver precision and reliability, Stadi Research & Analytics
-            provides cutting-edge data-based insights that empower organisations to make informed decisions. We combine
-            deep expertise in research methodology with advanced analytical techniques to deliver actionable results.</p>
+          <h2 class="about-intro-heading">We're Stadi Research & Analytics: a specialist team of data professionals,
+            researchers and software engineers — your trusted partners in research, analytics and building the
+            applications that turn insight into action.</h2>
+          <p class="about-intro-text">Founded with a vision to deliver precision and reliability, Stadi combines rigorous
+            research methodology and advanced analytics with custom-built software solutions — from interactive
+            dashboards to full-stack applications — empowering organisations to make better decisions and operate
+            smarter every day.</p>
         </div>
       </div>
     </section>
@@ -181,9 +210,9 @@
             </a>
           </div>
           <div class="col-lg-3 col-md-6">
-            <a href="#service-analytics" class="service-tab-card fade-in-up">
-              <div class="service-tab-icon"><i class="bi bi-graph-up-arrow"></i></div>
-              <h3>Business Analytics</h3>
+            <a href="#service-solutions" class="service-tab-card fade-in-up">
+              <div class="service-tab-icon"><i class="bi bi-code-square"></i></div>
+              <h3>Solutions & Applications</h3>
               <span class="tab-link">Learn more <i class="bi bi-arrow-right"></i></span>
             </a>
           </div>
@@ -229,23 +258,24 @@
     </section>
 
     <!-- ======= Service Detail 2 ======= -->
-    <section id="service-analytics" class="service-detail section-light diagonal-bottom">
+    <section id="service-solutions" class="service-detail section-light diagonal-bottom">
       <div class="container">
         <div class="row align-items-center flex-lg-row-reverse">
           <div class="col-lg-6 service-img-wrap fade-in-up">
             <div class="service-img">
-              <img src="assets/img/homepage_2.jpg" alt="Business Analytics" class="img-fluid">
+              <img src="assets/img/homepage_2.jpg" alt="Solutions & Applications" class="img-fluid">
             </div>
           </div>
           <div class="col-lg-6 service-text fade-in-up">
             <span class="section-label">Service</span>
-            <div class="service-icon"><i class="bi bi-graph-up-arrow"></i></div>
-            <h2>Business Analytics</h2>
-            <p>Our business analytics services unlock valuable insights for data-driven
-              strategies and informed decision-making. With advanced tools and methodologies,
-              we help businesses uncover trends and optimize operations.</p>
-            <p>We identify growth opportunities, enabling organisations to thrive in a
-              competitive market through evidence-based strategy.</p>
+            <div class="service-icon"><i class="bi bi-code-square"></i></div>
+            <h2>Solutions & Applications</h2>
+            <p>We design and build custom software solutions — from interactive dashboards
+              and data platforms to tailored web and mobile applications — that transform
+              research and analytics into everyday operational tools.</p>
+            <p>Our engineering team pairs domain expertise with modern tooling to ship
+              reliable, user-friendly products that put insights directly into the hands
+              of the people who need them.</p>
             <a href="services.html" class="btn-primary-cta">Learn More <span class="btn-plus">+</span></a>
           </div>
         </div>
@@ -349,8 +379,8 @@
               <li>
                 <i class="bi bi-check-circle-fill"></i>
                 <div>
-                  <strong>Expertise in Research & Analytics</strong>
-                  <span>Our team combines deep domain knowledge with advanced analytical capabilities to deliver precise, actionable insights.</span>
+                  <strong>Research, Analytics & Engineering Under One Roof</strong>
+                  <span>We combine deep domain knowledge with advanced analytics and in-house software engineering to deliver insights and the applications that bring them to life.</span>
                 </div>
               </li>
               <li>
@@ -531,7 +561,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 footer-col">
-            <div class="footer-logo"><img src="assets/img/Logo.png" alt="Stadi Analytics" class="img-fluid"></div>
+            <div class="footer-logo"><img src="assets/img/Logo-transparent.png" alt="Stadi Analytics" class="img-fluid"></div>
             <div class="footer-social">
               <a href="https://twitter.com/Stadi_Analytics" target="_blank"><i class="bi bi-twitter-x"></i></a>
               <a href="https://www.facebook.com/profile.php?id=100083039181812" target="_blank"><i class="bi bi-facebook"></i></a>
@@ -545,7 +575,7 @@
           </div>
           <div class="col-lg-2 col-md-6 footer-col">
             <h4>Services</h4>
-            <ul><li><a href="services.html">Baseline Survey</a></li><li><a href="services.html">Business Analytics</a></li><li><a href="services.html">Training</a></li><li><a href="services.html">Data Analytics</a></li><li><a href="services.html">Data Collection</a></li></ul>
+            <ul><li><a href="services.html">Solutions & Applications</a></li><li><a href="services.html">Baseline Survey</a></li><li><a href="services.html">Business Analytics</a></li><li><a href="services.html">Training</a></li><li><a href="services.html">Data Analytics</a></li></ul>
           </div>
           <div class="col-lg-2 col-md-6 footer-col">
             <h4>Company</h4>

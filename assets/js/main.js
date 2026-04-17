@@ -283,7 +283,7 @@
    */
   const typewriterEl = document.getElementById('heroTypewriter');
   if (typewriterEl) {
-    const words = ['data.', 'insights.', 'results.', 'impact.'];
+    const words = ['insights.', 'solutions.', 'applications.', 'impact.'];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
