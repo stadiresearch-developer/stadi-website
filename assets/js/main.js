@@ -264,7 +264,7 @@
     const heroImages = [
       'assets/img/homepage_1.jpg',
       'assets/img/homepage_2.jpg',
-      'assets/img/stadi_1.jpg'
+      'assets/img/app.jpg'
     ];
     let currentImg = 0;
     heroBg.style.backgroundImage = `url('${heroImages[0]}')`;
