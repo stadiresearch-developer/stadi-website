@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stadi Logo Exploration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #080d18; font-family: 'Montserrat', sans-serif; padding: 60px 40px; }
+
+    h1 { color: rgba(255,255,255,.35); font-size: 11px; letter-spacing: .25em; text-transform: uppercase; margin-bottom: 60px; }
+
+    /* Palette swatches */
+    .palettes { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 80px; }
+    .palette { }
+    .palette-swatches { display: flex; gap: 4px; margin-bottom: 8px; }
+    .swatch { width: 32px; height: 32px; }
+    .palette-name { font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.3); }
+
+    /* Logo grid */
+    .section-title { color: rgba(255,255,255,.2); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 32px; border-top: 1px solid rgba(255,255,255,.06); padding-top: 32px; }
+    .logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2px; margin-bottom: 80px; }
+
+    .logo-card {
+      background: #0d1425;
+      padding: 48px 40px;
+      display: flex; flex-direction: column; gap: 40px;
+      cursor: pointer; transition: background .2s;
+      position: relative;
+    }
+    .logo-card:hover { background: #111c30; }
+    .logo-card.selected { outline: 2px solid #C6163E; }
+    .logo-card .variant-label {
+      position: absolute; top: 14px; right: 16px;
+      font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(255,255,255,.2);
+    }
+
+    /* Dark bg version */
+    .on-dark { background: #080d18; padding: 28px 24px; }
+    /* Light bg version */
+    .on-light { background: #f0f4f8; padding: 28px 24px; }
+    .bg-label { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.2); margin-bottom: 12px; }
+    .bg-label.light-label { color: rgba(0,0,0,.25); }
+
+    /* ── Logo SVG containers ── */
+    svg.logo { display: block; }
+  </style>
+</head>
+<body>
+
+<h1>Stadi Research &amp; Analytics — Logo Exploration</h1>
+
+<!-- ── PALETTE KEY ─────────────────────────────────── -->
+<div class="palettes">
+  <div class="palette">
+    <div class="palette-swatches">
+      <div class="swatch" style="background:#1A56DB"></div>
+      <div class="swatch" style="background:#7C3AED"></div>
+    </div>
+    <div class="palette-name">A — Cobalt + Violet</div>
+  </div>
+  <div class="palette">
+    <div class="palette-swatches">
+      <div class="swatch" style="background:#0284C7"></div>
+      <div class="swatch" style="background:#9333EA"></div>
+    </div>
+    <div class="palette-name">B — Azure + Grape</div>
+  </div>
+  <div class="palette">
+    <div class="palette-swatches">
+      <div class="swatch" style="background:#2563EB"></div>
+      <div class="swatch" style="background:#C026D3"></div>
+    </div>
+    <div class="palette-name">C — Royal + Fuchsia</div>
+  </div>
+  <div class="palette">
+    <div class="palette-swatches">
+      <div class="swatch" style="background:#3B82F6"></div>
+      <div class="swatch" style="background:#A855F7"></div>
+    </div>
+    <div class="palette-name">D — Sky + Lavender</div>
+  </div>
+  <div class="palette">
+    <div class="palette-swatches">
+      <div class="swatch" style="background:#0EA5E9"></div>
+      <div class="swatch" style="background:#6D28D9"></div>
+    </div>
+    <div class="palette-name">E — Cyan + Indigo</div>
+  </div>
+</div>
+
+<!-- ── MARK 1: Ascending Steps ─────────────────────── -->
+<div class="section-title">Mark 01 — Ascending Steps · Abstract upward momentum</div>
+<div class="logo-grid">
+
+  <!-- Palette A -->
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">01-A</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <rect x="0"  y="32" width="10" height="20" fill="#1A56DB"/>
+        <rect x="13" y="20" width="10" height="32" fill="#7C3AED"/>
+        <rect x="26" y="10" width="10" height="42" rx="0" fill="white"/>
+        <rect x="39" y="18" width="3"  height="34" fill="rgba(255,255,255,0.15)"/>
+        <text x="52" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="53" y="45" fill="#7C3AED" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <rect x="0"  y="32" width="10" height="20" fill="#1A56DB"/>
+        <rect x="13" y="20" width="10" height="32" fill="#7C3AED"/>
+        <rect x="26" y="10" width="10" height="42" fill="#080d18"/>
+        <rect x="39" y="18" width="3"  height="34" fill="rgba(0,0,0,.12)"/>
+        <text x="52" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="53" y="45" fill="#7C3AED" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Palette B -->
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">01-B</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <rect x="0"  y="32" width="10" height="20" fill="#0284C7"/>
+        <rect x="13" y="20" width="10" height="32" fill="#9333EA"/>
+        <rect x="26" y="10" width="10" height="42" fill="white"/>
+        <rect x="39" y="18" width="3"  height="34" fill="rgba(255,255,255,0.15)"/>
+        <text x="52" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="53" y="45" fill="#9333EA" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <rect x="0"  y="32" width="10" height="20" fill="#0284C7"/>
+        <rect x="13" y="20" width="10" height="32" fill="#9333EA"/>
+        <rect x="26" y="10" width="10" height="42" fill="#080d18"/>
+        <rect x="39" y="18" width="3"  height="34" fill="rgba(0,0,0,.12)"/>
+        <text x="52" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="53" y="45" fill="#9333EA" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Palette D -->
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">01-D</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <rect x="0"  y="32" width="10" height="20" fill="#3B82F6"/>
+        <rect x="13" y="20" width="10" height="32" fill="#A855F7"/>
+        <rect x="26" y="10" width="10" height="42" fill="white"/>
+        <rect x="39" y="18" width="3"  height="34" fill="rgba(255,255,255,0.15)"/>
+        <text x="52" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="53" y="45" fill="#A855F7" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <rect x="0"  y="32" width="10" height="20" fill="#3B82F6"/>
+        <rect x="13" y="20" width="10" height="32" fill="#A855F7"/>
+        <rect x="26" y="10" width="10" height="42" fill="#080d18"/>
+        <rect x="39" y="18" width="3"  height="34" fill="rgba(0,0,0,.12)"/>
+        <text x="52" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="53" y="45" fill="#A855F7" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── MARK 2: Diamond / Rhombus ─────────────────── -->
+<div class="section-title">Mark 02 — Fractured Diamond · Precision, data intersection</div>
+<div class="logo-grid">
+
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">02-A</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <!-- Diamond split: left=blue, right=purple -->
+        <polygon points="26,2 46,26 26,50 6,26" fill="none" stroke="#1A56DB" stroke-width="2"/>
+        <polygon points="26,2 46,26 26,50" fill="#7C3AED" opacity="0.7"/>
+        <polygon points="26,2 6,26 26,50"  fill="#1A56DB" opacity="0.7"/>
+        <line x1="26" y1="2" x2="26" y2="50" stroke="white" stroke-width="1.5"/>
+        <text x="56" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="57" y="45" fill="#7C3AED" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <polygon points="26,2 46,26 26,50 6,26" fill="none" stroke="#1A56DB" stroke-width="2"/>
+        <polygon points="26,2 46,26 26,50" fill="#7C3AED" opacity="0.8"/>
+        <polygon points="26,2 6,26 26,50"  fill="#1A56DB" opacity="0.8"/>
+        <line x1="26" y1="2" x2="26" y2="50" stroke="white" stroke-width="1.5"/>
+        <text x="56" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="57" y="45" fill="#7C3AED" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">02-B</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <polygon points="26,2 46,26 26,50 6,26" fill="none" stroke="#0284C7" stroke-width="2"/>
+        <polygon points="26,2 46,26 26,50" fill="#9333EA" opacity="0.75"/>
+        <polygon points="26,2 6,26 26,50"  fill="#0284C7" opacity="0.75"/>
+        <line x1="26" y1="2" x2="26" y2="50" stroke="white" stroke-width="1.5"/>
+        <text x="56" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="57" y="45" fill="#9333EA" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <polygon points="26,2 46,26 26,50 6,26" fill="none" stroke="#0284C7" stroke-width="2"/>
+        <polygon points="26,2 46,26 26,50" fill="#9333EA" opacity="0.85"/>
+        <polygon points="26,2 6,26 26,50"  fill="#0284C7" opacity="0.85"/>
+        <line x1="26" y1="2" x2="26" y2="50" stroke="white" stroke-width="1.5"/>
+        <text x="56" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="57" y="45" fill="#9333EA" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">02-E</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <polygon points="26,2 46,26 26,50 6,26" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+        <polygon points="26,2 46,26 26,50" fill="#6D28D9" opacity="0.8"/>
+        <polygon points="26,2 6,26 26,50"  fill="#0EA5E9" opacity="0.8"/>
+        <line x1="26" y1="2" x2="26" y2="50" stroke="white" stroke-width="1.5"/>
+        <text x="56" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="57" y="45" fill="#0EA5E9" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <polygon points="26,2 46,26 26,50 6,26" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+        <polygon points="26,2 46,26 26,50" fill="#6D28D9" opacity="0.85"/>
+        <polygon points="26,2 6,26 26,50"  fill="#0EA5E9" opacity="0.85"/>
+        <line x1="26" y1="2" x2="26" y2="50" stroke="white" stroke-width="1.5"/>
+        <text x="56" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="57" y="45" fill="#6D28D9" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── MARK 3: Interlocking S ────────────────────── -->
+<div class="section-title">Mark 03 — Geometric S · Letter-based abstract mark</div>
+<div class="logo-grid">
+
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">03-A</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <!-- S built from rectangles -->
+        <rect x="4"  y="2"  width="28" height="10" fill="#1A56DB"/>
+        <rect x="4"  y="2"  width="10" height="22" fill="#1A56DB"/>
+        <rect x="4"  y="21" width="28" height="10" fill="#7C3AED"/>
+        <rect x="22" y="30" width="10" height="20" fill="#7C3AED"/>
+        <rect x="4"  y="40" width="28" height="10" fill="white"/>
+        <text x="44" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="45" y="45" fill="#7C3AED" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <rect x="4"  y="2"  width="28" height="10" fill="#1A56DB"/>
+        <rect x="4"  y="2"  width="10" height="22" fill="#1A56DB"/>
+        <rect x="4"  y="21" width="28" height="10" fill="#7C3AED"/>
+        <rect x="22" y="30" width="10" height="20" fill="#7C3AED"/>
+        <rect x="4"  y="40" width="28" height="10" fill="#080d18"/>
+        <text x="44" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="45" y="45" fill="#7C3AED" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">03-C</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <rect x="4"  y="2"  width="28" height="10" fill="#2563EB"/>
+        <rect x="4"  y="2"  width="10" height="22" fill="#2563EB"/>
+        <rect x="4"  y="21" width="28" height="10" fill="#C026D3"/>
+        <rect x="22" y="30" width="10" height="20" fill="#C026D3"/>
+        <rect x="4"  y="40" width="28" height="10" fill="white"/>
+        <text x="44" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="45" y="45" fill="#C026D3" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <rect x="4"  y="2"  width="28" height="10" fill="#2563EB"/>
+        <rect x="4"  y="2"  width="10" height="22" fill="#2563EB"/>
+        <rect x="4"  y="21" width="28" height="10" fill="#C026D3"/>
+        <rect x="22" y="30" width="10" height="20" fill="#C026D3"/>
+        <rect x="4"  y="40" width="28" height="10" fill="#080d18"/>
+        <text x="44" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="45" y="45" fill="#C026D3" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── MARK 4: Intersecting triangles ──────────── -->
+<div class="section-title">Mark 04 — Intersecting Triangles · Data convergence</div>
+<div class="logo-grid">
+
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">04-A</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <polygon points="6,48 26,4 46,48" fill="none" stroke="#1A56DB" stroke-width="2.5"/>
+        <polygon points="16,48 36,4 46,48" fill="#7C3AED" opacity="0.5"/>
+        <line x1="26" y1="4" x2="46" y2="48" stroke="white" stroke-width="1.5" opacity="0.4"/>
+        <text x="56" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="57" y="45" fill="#7C3AED" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <polygon points="6,48 26,4 46,48" fill="none" stroke="#1A56DB" stroke-width="2.5"/>
+        <polygon points="16,48 36,4 46,48" fill="#7C3AED" opacity="0.6"/>
+        <line x1="26" y1="4" x2="46" y2="48" stroke="#080d18" stroke-width="1.5" opacity="0.3"/>
+        <text x="56" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="57" y="45" fill="#7C3AED" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">04-E</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <polygon points="6,48 26,4 46,48" fill="none" stroke="#0EA5E9" stroke-width="2.5"/>
+        <polygon points="16,48 36,4 46,48" fill="#6D28D9" opacity="0.55"/>
+        <line x1="26" y1="4" x2="46" y2="48" stroke="white" stroke-width="1.5" opacity="0.4"/>
+        <text x="56" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="57" y="45" fill="#0EA5E9" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="260" height="52" viewBox="0 0 260 52" fill="none">
+        <polygon points="6,48 26,4 46,48" fill="none" stroke="#0EA5E9" stroke-width="2.5"/>
+        <polygon points="16,48 36,4 46,48" fill="#6D28D9" opacity="0.7"/>
+        <line x1="26" y1="4" x2="46" y2="48" stroke="#080d18" stroke-width="1.5" opacity="0.3"/>
+        <text x="56" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">STADI</text>
+        <text x="57" y="45" fill="#6D28D9" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── MARK 5: Methods Analytics style — clean wordmark ── -->
+<div class="section-title">Mark 05 — Wordmark Style · Inspired by Methods Analytics · Bold type, minimal mark</div>
+<div class="logo-grid">
+
+  <!-- 05-A: Square accent + bold wordmark -->
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">05-A · Square mark</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="280" height="52" viewBox="0 0 280 52" fill="none">
+        <!-- Small filled square mark -->
+        <rect x="0" y="10" width="16" height="16" fill="#1A56DB"/>
+        <rect x="4" y="14" width="8"  height="8"  fill="#7C3AED"/>
+        <!-- Bold wordmark -->
+        <text x="26" y="30" fill="white" font-family="Montserrat,sans-serif" font-size="22" font-weight="900" letter-spacing="-1">STADI</text>
+        <!-- Thin rule -->
+        <rect x="26" y="34" width="100" height="1" fill="rgba(255,255,255,.15)"/>
+        <text x="26" y="46" fill="rgba(255,255,255,.45)" font-family="Montserrat,sans-serif" font-size="7" font-weight="600" letter-spacing="3">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="280" height="52" viewBox="0 0 280 52" fill="none">
+        <rect x="0" y="10" width="16" height="16" fill="#1A56DB"/>
+        <rect x="4" y="14" width="8"  height="8"  fill="#7C3AED"/>
+        <text x="26" y="30" fill="#080d18" font-family="Montserrat,sans-serif" font-size="22" font-weight="900" letter-spacing="-1">STADI</text>
+        <rect x="26" y="34" width="100" height="1" fill="rgba(0,0,0,.12)"/>
+        <text x="26" y="46" fill="rgba(0,0,0,.4)" font-family="Montserrat,sans-serif" font-size="7" font-weight="600" letter-spacing="3">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- 05-B: Diagonal slash mark -->
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">05-B · Slash mark</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="280" height="52" viewBox="0 0 280 52" fill="none">
+        <!-- Slash mark: two thick diagonal lines -->
+        <line x1="4"  y1="44" x2="14" y2="8"  stroke="#1A56DB" stroke-width="5" stroke-linecap="square"/>
+        <line x1="12" y1="44" x2="22" y2="8"  stroke="#7C3AED" stroke-width="5" stroke-linecap="square"/>
+        <!-- Wordmark -->
+        <text x="32" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="22" font-weight="900" letter-spacing="-1">STADI</text>
+        <rect x="32" y="36" width="104" height="1" fill="rgba(255,255,255,.15)"/>
+        <text x="32" y="48" fill="rgba(255,255,255,.45)" font-family="Montserrat,sans-serif" font-size="7" font-weight="600" letter-spacing="3">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="280" height="52" viewBox="0 0 280 52" fill="none">
+        <line x1="4"  y1="44" x2="14" y2="8"  stroke="#1A56DB" stroke-width="5" stroke-linecap="square"/>
+        <line x1="12" y1="44" x2="22" y2="8"  stroke="#7C3AED" stroke-width="5" stroke-linecap="square"/>
+        <text x="32" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="22" font-weight="900" letter-spacing="-1">STADI</text>
+        <rect x="32" y="36" width="104" height="1" fill="rgba(0,0,0,.12)"/>
+        <text x="32" y="48" fill="rgba(0,0,0,.4)" font-family="Montserrat,sans-serif" font-size="7" font-weight="600" letter-spacing="3">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- 05-C: Pure bold wordmark, no mark — closest to MA -->
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">05-C · Pure wordmark</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="280" height="52" viewBox="0 0 280 52" fill="none">
+        <!-- S in crimson, rest white -->
+        <text x="0" y="34" fill="#1A56DB" font-family="Montserrat,sans-serif" font-size="26" font-weight="900" letter-spacing="-1">S</text>
+        <text x="18" y="34" fill="white" font-family="Montserrat,sans-serif" font-size="26" font-weight="900" letter-spacing="-1">TADI</text>
+        <rect x="0" y="38" width="124" height="1.5" fill="rgba(255,255,255,.1)"/>
+        <text x="0" y="50" fill="rgba(255,255,255,.4)" font-family="Montserrat,sans-serif" font-size="7" font-weight="600" letter-spacing="3.5">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="280" height="52" viewBox="0 0 280 52" fill="none">
+        <text x="0" y="34" fill="#1A56DB" font-family="Montserrat,sans-serif" font-size="26" font-weight="900" letter-spacing="-1">S</text>
+        <text x="18" y="34" fill="#080d18" font-family="Montserrat,sans-serif" font-size="26" font-weight="900" letter-spacing="-1">TADI</text>
+        <rect x="0" y="38" width="124" height="1.5" fill="rgba(0,0,0,.1)"/>
+        <text x="0" y="50" fill="rgba(0,0,0,.4)" font-family="Montserrat,sans-serif" font-size="7" font-weight="600" letter-spacing="3.5">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- 05-D: Stacked version with colour accent line -->
+  <div class="logo-card" onclick="this.classList.toggle('selected')">
+    <div class="variant-label">05-D · Accent line</div>
+    <div class="on-dark">
+      <div class="bg-label">On dark</div>
+      <svg class="logo" width="280" height="52" viewBox="0 0 280 52" fill="none">
+        <!-- Vertical accent bars left -->
+        <rect x="0" y="8"  width="4" height="36" fill="#1A56DB"/>
+        <rect x="6" y="16" width="4" height="20" fill="#7C3AED"/>
+        <!-- Wordmark -->
+        <text x="20" y="32" fill="white" font-family="Montserrat,sans-serif" font-size="22" font-weight="900" letter-spacing="-1">STADI</text>
+        <rect x="20" y="36" width="100" height="1" fill="rgba(255,255,255,.12)"/>
+        <text x="20" y="48" fill="rgba(255,255,255,.4)" font-family="Montserrat,sans-serif" font-size="7" font-weight="600" letter-spacing="3">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+    <div class="on-light">
+      <div class="bg-label light-label">On light</div>
+      <svg class="logo" width="280" height="52" viewBox="0 0 280 52" fill="none">
+        <rect x="0" y="8"  width="4" height="36" fill="#1A56DB"/>
+        <rect x="6" y="16" width="4" height="20" fill="#7C3AED"/>
+        <text x="20" y="32" fill="#080d18" font-family="Montserrat,sans-serif" font-size="22" font-weight="900" letter-spacing="-1">STADI</text>
+        <rect x="20" y="36" width="100" height="1" fill="rgba(0,0,0,.1)"/>
+        <text x="20" y="48" fill="rgba(0,0,0,.4)" font-family="Montserrat,sans-serif" font-size="7" font-weight="600" letter-spacing="3">RESEARCH &amp; ANALYTICS</text>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+<p style="font-size:11px; color:rgba(255,255,255,.2); letter-spacing:.12em; text-transform:uppercase; text-align:center; padding:40px 0;">Click any card to select it — then tell me which one to develop further</p>
+
+</body>
+</html>

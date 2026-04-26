@@ -2,126 +2,199 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact - Stadi Research & Analytics</title>
-  <meta content="Get in touch with Stadi Research & Analytics." name="description">
-  <link href="assets/img/Logo-transparent.png" rel="icon">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Stadi Research &amp; Analytics</title>
+  <meta name="description" content="Get in touch with Stadi Research &amp; Analytics — let's discuss your data challenge.">
+  <link rel="icon" href="assets/img/Logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
-      <div class="logo"><a href="/"><img src="assets/img/Logo-transparent.png" alt="Stadi Analytics" class="img-fluid"></a></div>
-      <div class="header-nav-right">
-        <button class="header-nav-link" id="servicesDropdownBtn">Services <i class="bi bi-chevron-down"></i></button>
-        <a href="contact.html" class="header-cta-btn">Get in Touch</a>
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open Menu"><span></span><span class="accent-line"></span><span></span></button>
-      </div>
-    </div>
-  </header>
-  <div class="mega-dropdown" id="megaDropdown">
-    <div class="mega-dropdown-inner">
-      <div class="mega-col mega-col-services">
-        <h3>Our Services</h3>
-        <div class="mega-service-item">
-          <div class="mega-service-icon"><i class="bi bi-clipboard-data"></i></div>
-          <div><h4><a href="services.html">Baseline Survey</a></h4><p>Designing and implementing baseline surveys, mid-term evaluations, and impact assessments.</p></div>
-        </div>
-        <div class="mega-service-item">
-          <div class="mega-service-icon"><i class="bi bi-code-square"></i></div>
-          <div><h4><a href="services.html">Solutions & Applications</a></h4><p>Custom dashboards, data platforms and web/mobile applications that turn insight into action.</p></div>
-        </div>
-        <div class="mega-service-item">
-          <div class="mega-service-icon"><i class="bi bi-graph-up-arrow"></i></div>
-          <div><h4><a href="services.html">Business Analytics</a></h4><p>Unlocking valuable insights for data-driven strategies and informed decision-making.</p></div>
-        </div>
-        <div class="mega-service-item">
-          <div class="mega-service-icon"><i class="bi bi-mortarboard"></i></div>
-          <div><h4><a href="services.html">Training & Capacity</a></h4><p>Comprehensive training in research methodology, data collection, and predictive analytics.</p></div>
-        </div>
-        <div class="mega-service-item">
-          <div class="mega-service-icon"><i class="bi bi-bar-chart-line"></i></div>
-          <div><h4><a href="services.html">Data Analytics</a></h4><p>Statistical and machine learning techniques to analyze, visualize, and report data insights.</p></div>
-        </div>
-      </div>
-      <div class="mega-col mega-col-links">
-        <h3>Sectors</h3>
-        <ul><li><a href="services.html">Government & NGO</a></li><li><a href="services.html">Agriculture</a></li><li><a href="services.html">Banking & Finance</a></li></ul>
-        <h3>Company</h3>
-        <ul><li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li></ul>
-        <h3>Insights</h3>
-        <ul><li><a href="blog.html">Blog</a></li><li><a href="portfolio.html">Portfolio</a></li></ul>
-        <h3><a href="contact.html">Contact</a></h3>
-        <div class="mega-social"><a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank"><i class="bi bi-linkedin"></i></a><a href="https://twitter.com/Stadi_Analytics" target="_blank"><i class="bi bi-twitter-x"></i></a></div>
-      </div>
+
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="Stadi Analytics"></a>
+    <div class="header-right">
+      <a href="contact.html" class="header-cta" style="border-color:var(--crimson); color:var(--crimson);">Get in Touch</a>
+      <button class="ham" id="ham" aria-label="Open Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
-  <div class="nav-overlay" id="navOverlay">
-    <button class="nav-overlay-close" id="navClose">&times;</button>
-    <nav class="overlay-nav">
-      <ul><li><a href="/">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Insights</a></li><li><a href="contact.html">Contact</a></li></ul>
-      <div class="overlay-nav-social"><a href="https://twitter.com/Stadi_Analytics" target="_blank"><i class="bi bi-twitter-x"></i></a><a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank"><i class="bi bi-linkedin"></i></a></div>
-    </nav>
+</header>
+
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-close" id="navClose">&times;</button>
+  <nav class="overlay-nav">
+    <div class="overlay-rule"></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="overlay-social">
+      <a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://twitter.com/Stadi_Analytics" target="_blank"><i class="bi bi-twitter-x"></i></a>
+    </div>
+  </nav>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="label">Let's Talk</span>
+    <h1>Get in Touch</h1>
+    <p>Tell us about your data challenge. We'll respond within one business day.</p>
   </div>
+</section>
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol><li><a href="index.html">Home</a></li><li>Contact</li></ol>
+  </div>
+</div>
 
-  <main id="main">
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="breadcrumb-hero"><div class="container"><div class="breadcrumb-hero"><h2>Contact Us</h2></div></div></div>
-      <div class="container"><ol><li><a href="/">Home</a></li><li>Contact</li></ol></div>
-    </section>
+<section class="contact-sec">
+  <div class="container">
+    <div class="row g-5">
 
-    <section id="contact" class="contact section-light" style="padding: 40px 0 80px;">
-      <div class="container">
-        <div style="border: 1px solid var(--border-color); overflow: hidden;">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.830494363712!2d36.8207631!3d-1.2750001999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17973cdb9aed%3A0x2249290821e6e627!2sStadi%20Research%20and%20Analytics!5e0!3m2!1sen!2ske!4v1687761259317!5m2!1sen!2ske" width="100%" height="400" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-4 fade-in-up">
-            <div class="info">
-              <div class="info-box"><i class="bi bi-geo-alt"></i><h3>Location</h3><p>Ngara Road, off Muranga Road<br>P.O Box 51042 - 00200, Nairobi<br>Kenya</p></div>
-              <div class="info-box"><i class="bi bi-envelope"></i><h3>Email</h3><p><a href="mailto:hello@stadianalytics.com">hello@stadianalytics.com</a></p></div>
-              <div class="info-box"><i class="bi bi-phone"></i><h3>Call</h3><p><a href="tel:+254702795943">+254 702 795 943</a><br><a href="tel:+254797284425">+254 797 284 425</a></p></div>
+      <!-- Form -->
+      <div class="col-lg-7 fade-up">
+        <span class="label">Send a Message</span>
+        <h2 style="font-size:clamp(24px,3vw,40px); margin-bottom:32px;">Start the conversation</h2>
+        <form class="contact-form" id="contactForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="Jane" required>
+            </div>
+            <div class="col-md-6">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" placeholder="Doe" required>
             </div>
           </div>
-          <div class="col-lg-8 mt-5 mt-lg-0 fade-in-up">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group"><input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required></div>
-                <div class="col-md-6 form-group mt-3 mt-md-0"><input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required></div>
-              </div>
-              <div class="form-group mt-3"><input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required></div>
-              <div class="form-group mt-3"><textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea></div>
-              <div class="my-3"><div class="loading">Loading</div><div class="error-message"></div><div class="sent-message">Your message has been sent. Thank you!</div></div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@organisation.org" required>
+          <label for="org">Organisation</label>
+          <input type="text" id="org" name="org" placeholder="Your organisation name">
+          <label for="service">Service of Interest</label>
+          <select id="service" name="service">
+            <option value="">Select a service…</option>
+            <option>Baseline Survey &amp; M&amp;E</option>
+            <option>Solutions &amp; Application Development</option>
+            <option>Business Analytics</option>
+            <option>Data Analytics &amp; Visualisation</option>
+            <option>Training &amp; Capacity Development</option>
+            <option>Other / Not sure yet</option>
+          </select>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Describe your data challenge or project…" required></textarea>
+          <button type="submit" class="btn-cta btn-cta-primary mt-4" style="width:100%; justify-content:center;">Send Message <i class="bi bi-arrow-right"></i></button>
+        </form>
+      </div>
+
+      <!-- Info -->
+      <div class="col-lg-4 offset-lg-1 fade-up">
+        <span class="label">Contact Details</span>
+        <h2 style="font-size:clamp(22px,2.5vw,36px); margin-bottom:40px;">We'd love to hear from you</h2>
+
+        <div class="contact-info-item">
+          <i class="bi bi-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:info@stadilytics.com" style="color:var(--text-2);">info@stadilytics.com</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="bi bi-globe2"></i>
+          <div>
+            <h4>Website</h4>
+            <p><a href="https://www.stadilytics.com" target="_blank" style="color:var(--text-2);">www.stadilytics.com</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="bi bi-geo-alt"></i>
+          <div>
+            <h4>Location</h4>
+            <p>Nairobi, Kenya</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="bi bi-linkedin"></i>
+          <div>
+            <h4>LinkedIn</h4>
+            <p><a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank" style="color:var(--text-2);">Stadi Research &amp; Analytics</a></p>
+          </div>
+        </div>
+
+        <div style="margin-top:48px; padding:36px; background:var(--navy-card); border-top:3px solid var(--crimson);">
+          <p style="font-family:var(--font-h); font-size:13px; font-weight:700; color:var(--text-1); margin-bottom:8px;">Response Time</p>
+          <p style="font-size:14px; color:var(--text-2); margin:0;">We typically respond within one business day. For urgent enquiries, connect with us on LinkedIn.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <img src="assets/img/logo.svg" alt="Stadi Analytics">
+            <p>Research, analytics and custom software solutions that turn data into impact.</p>
+            <div class="footer-social">
+              <a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank"><i class="bi bi-linkedin"></i></a>
+              <a href="https://twitter.com/Stadi_Analytics" target="_blank"><i class="bi bi-twitter-x"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="blog.html">Insights</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html">Baseline Survey</a></li>
+              <li><a href="services.html">Solutions &amp; Applications</a></li>
+              <li><a href="services.html">Data Analytics</a></li>
+              <li><a href="services.html">Training &amp; Capacity</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="mailto:info@stadilytics.com">info@stadilytics.com</a></li>
+              <li><a href="https://www.stadilytics.com" target="_blank">www.stadilytics.com</a></li>
+              <li><a href="#">Nairobi, Kenya</a></li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+      <p>&copy; 2025 Stadi Research &amp; Analytics. All rights reserved.</p>
+      <p style="color:var(--text-3);">Research &nbsp;·&nbsp; Analytics &nbsp;·&nbsp; Software</p>
+    </div>
+  </div>
+</footer>
 
-  <footer id="footer">
-    <div class="footer-cta-row"><div class="container fade-in-up"><span class="section-label">Work With Us</span><h2>Find out how Stadi Analytics can<br>transform your data into actionable insights</h2><a href="contact.html" class="btn-primary-cta">Get In Touch <span class="btn-plus">+</span></a></div></div>
-    <div class="footer-top"><div class="container"><div class="row">
-      <div class="col-lg-3 col-md-6 footer-col"><div class="footer-logo"><img src="assets/img/Logo-transparent.png" alt="Stadi" class="img-fluid"></div><div class="footer-social"><a href="https://twitter.com/Stadi_Analytics" target="_blank"><i class="bi bi-twitter-x"></i></a><a href="https://www.facebook.com/profile.php?id=100083039181812" target="_blank"><i class="bi bi-facebook"></i></a><a href="https://www.instagram.com/stadianalytics_/" target="_blank"><i class="bi bi-instagram"></i></a><a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank"><i class="bi bi-linkedin"></i></a></div></div>
-      <div class="col-lg-2 col-md-6 footer-col"><h4>About Us</h4><ul><li><a href="about.html">About</a></li><li><a href="team.html">Our Team</a></li></ul></div>
-      <div class="col-lg-2 col-md-6 footer-col"><h4>Services</h4><ul><li><a href="services.html">Solutions & Applications</a></li><li><a href="services.html">Baseline Survey</a></li><li><a href="services.html">Business Analytics</a></li><li><a href="services.html">Training</a></li><li><a href="services.html">Data Analytics</a></li></ul></div>
-      <div class="col-lg-2 col-md-6 footer-col"><h4>Company</h4><ul><li><a href="blog.html">Insights</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="col-lg-3 col-md-6 footer-col footer-address"><h4>Nairobi Office</h4><p>Ngara Road, off Muranga Road<br>P.O Box 51042 - 00200, Nairobi<br>Kenya</p><p class="footer-contact-info"><a href="tel:+254702795943">+254 702 795 943</a><br><a href="tel:+254797284425">+254 797 284 425</a><br><a href="mailto:hello@stadianalytics.com">hello@stadianalytics.com</a></p></div>
-    </div></div></div>
-    <div class="footer-bottom"><div class="container d-flex justify-content-between align-items-center flex-wrap"><div class="copyright">&copy; <span id="year"></span> Stadi Research & Analytics. All Rights Reserved.</div><div class="footer-links"><a href="#">Terms & Conditions</a><a href="#">Privacy Policy</a></div></div></div>
-  </footer>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" fill="none">
+  
+  <rect x="0" y="6" width="5" height="36" fill="#1A56DB"></rect>
+  <rect x="8" y="14" width="5" height="20" fill="#7C3AED"></rect>
+  
+  <text x="22" y="31" fill="white" font-family="Montserrat, sans-serif" font-size="22" font-weight="900" letter-spacing="-1">STADI</text>
+  
+  <rect x="22" y="35" width="108" height="1" fill="rgba(255,255,255,0.12)"></rect>
+  
+  <text x="22" y="46" fill="rgba(255,255,255,0.42)" font-family="Montserrat, sans-serif" font-size="6.5" font-weight="600" letter-spacing="3.2">RESEARCH &amp; ANALYTICS</text>
+</svg>

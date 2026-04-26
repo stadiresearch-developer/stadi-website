@@ -1,381 +1,195 @@
-/**
-* Stadi Research & Analytics
-* Main JavaScript — Redesign
-*/
-(function() {
-  "use strict";
+/* Stadi Redesign — main.js */
 
-  const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
-    }
-  }
+document.addEventListener('DOMContentLoaded', () => {
 
-  const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
-      } else {
-        selectEl.addEventListener(type, listener)
-      }
-    }
-  }
+  /* ── Header scroll ───────────────────────────────────── */
+  const header = document.getElementById('header');
+  const onScroll = () => {
+    if (window.scrollY > 40) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-  const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
-
-  const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header ? header.offsetHeight : 0
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    })
-  }
-
-  /**
-   * Header scroll styling
-   */
-  let selectHeader = select('#header')
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled')
-      } else {
-        selectHeader.classList.remove('header-scrolled')
-      }
-    }
-    window.addEventListener('load', headerScrolled)
-    onscroll(document, headerScrolled)
-  }
-
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-  }
-
-  /**
-   * Hamburger menu + fullscreen overlay nav + mega dropdown
-   */
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const navOverlay = document.getElementById('navOverlay');
+  /* ── Hamburger / overlay nav ─────────────────────────── */
+  const ham      = document.getElementById('ham');
+  const overlay  = document.getElementById('navOverlay');
   const navClose = document.getElementById('navClose');
-  const servicesBtn = document.getElementById('servicesDropdownBtn');
-  const megaDropdown = document.getElementById('megaDropdown');
 
-  // Services mega dropdown toggle
-  if (servicesBtn && megaDropdown) {
-    servicesBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isActive = megaDropdown.classList.contains('active');
-      megaDropdown.classList.toggle('active');
-      servicesBtn.classList.toggle('active');
-      if (!isActive && navOverlay) {
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!megaDropdown.contains(e.target) && !servicesBtn.contains(e.target)) {
-        megaDropdown.classList.remove('active');
-        servicesBtn.classList.remove('active');
-      }
-    });
-
-    megaDropdown.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        megaDropdown.classList.remove('active');
-        servicesBtn.classList.remove('active');
-      });
-    });
-  }
-
-  // Hamburger open
-  if (hamburgerBtn) {
-    hamburgerBtn.addEventListener('click', () => {
-      navOverlay.classList.add('active');
+  if (ham && overlay) {
+    ham.addEventListener('click', () => {
+      overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
-      if (megaDropdown) {
-        megaDropdown.classList.remove('active');
-        if (servicesBtn) servicesBtn.classList.remove('active');
-      }
     });
+    navClose.addEventListener('click', closeNav);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeNav(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+  }
+  function closeNav() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
   }
 
-  if (navClose) {
-    navClose.addEventListener('click', () => {
-      navOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-  }
-
-  // Close overlay when clicking a nav link
-  if (navOverlay) {
-    const overlayLinks = navOverlay.querySelectorAll('a');
-    overlayLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-
-  /**
-   * Scroll with offset on links with .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-      scrollto(this.hash)
+  /* ── Typewriter ──────────────────────────────────────── */
+  const tw = document.getElementById('tw');
+  if (tw) {
+    const words = ['impact.', 'insights.', 'results.', 'decisions.'];
+    let wi = 0, ci = 0, del = false;
+    function tick() {
+      const w = words[wi];
+      tw.textContent = del ? w.slice(0, --ci) : w.slice(0, ++ci);
+      let delay = del ? 55 : 110;
+      if (!del && ci === w.length)  { delay = 2200; del = true; }
+      if (del  && ci === 0)         { del = false; wi = (wi+1) % words.length; delay = 350; }
+      setTimeout(tick, delay);
     }
-  }, true)
-
-  /**
-   * Scroll with offset on page load with hash links
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
-    }
-  });
-
-  /**
-   * GLightbox
-   */
-  if (typeof GLightbox !== 'undefined') {
-    GLightbox({ selector: '.glightbox' });
+    tick();
   }
 
-  /**
-   * Clients Slider (sub-pages)
-   */
-  if (typeof Swiper !== 'undefined' && select('.clients-slider')) {
-    new Swiper('.clients-slider', {
-      speed: 400,
-      loop: true,
-      autoplay: { delay: 5000, disableOnInteraction: false },
-      slidesPerView: 'auto',
-      pagination: { el: '.swiper-pagination', type: 'bullets', clickable: true },
-      breakpoints: {
-        320: { slidesPerView: 2, spaceBetween: 40 },
-        480: { slidesPerView: 3, spaceBetween: 60 },
-        640: { slidesPerView: 4, spaceBetween: 80 },
-        992: { slidesPerView: 6, spaceBetween: 120 }
-      }
-    });
-  }
-
-  /**
-   * Testimonials slider
-   */
-  if (typeof Swiper !== 'undefined' && select('.testimonials-slider')) {
-    new Swiper('.testimonials-slider', {
-      speed: 600,
-      loop: true,
-      autoplay: { delay: 6000, disableOnInteraction: false },
-      slidesPerView: 1,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.testimonial-next',
-        prevEl: '.testimonial-prev',
-      }
-    });
-  }
-
-  /**
-   * Swiper slider with 1 slide
-   */
-  if (typeof Swiper !== 'undefined' && select('.slides-1')) {
-    new Swiper('.slides-1', {
-      speed: 600,
-      loop: true,
-      autoplay: { delay: 5000, disableOnInteraction: false },
-      slidesPerView: 'auto',
-      pagination: { el: '.swiper-pagination', type: 'bullets', clickable: true },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
-    });
-  }
-
-  /**
-   * Portfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer && typeof Isotope !== 'undefined') {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-      });
-
-      let portfolioFilters = select('#portfolio-flters li', true);
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(el => el.classList.remove('filter-active'));
-        this.classList.add('filter-active');
-        portfolioIsotope.arrange({ filter: this.getAttribute('data-filter') });
-      }, true);
-    }
-  });
-
-  /**
-   * Portfolio lightbox
-   */
-  if (typeof GLightbox !== 'undefined') {
-    GLightbox({ selector: '.portfolio-lightbox' });
-  }
-
-  /**
-   * Portfolio details slider
-   */
-  if (typeof Swiper !== 'undefined' && select('.portfolio-details-slider')) {
-    new Swiper('.portfolio-details-slider', {
-      speed: 400,
-      loop: true,
-      autoplay: { delay: 5000, disableOnInteraction: false },
-      pagination: { el: '.swiper-pagination', type: 'bullets', clickable: true }
-    });
-  }
-
-  /**
-   * Hero background image cycling
-   */
-  const heroBg = document.getElementById('heroBg');
-  if (heroBg) {
-    const heroImages = [
-      'assets/img/homepage_1.jpg',
-      'assets/img/homepage_2.jpg',
-      'assets/img/app.jpg'
-    ];
-    let currentImg = 0;
-    heroBg.style.backgroundImage = `url('${heroImages[0]}')`;
-    setInterval(() => {
-      currentImg = (currentImg + 1) % heroImages.length;
-      heroBg.style.opacity = '0';
-      setTimeout(() => {
-        heroBg.style.backgroundImage = `url('${heroImages[currentImg]}')`;
-        heroBg.style.opacity = '1';
-      }, 800);
-    }, 5000);
-  }
-
-  /**
-   * Hero typewriter effect
-   */
-  const typewriterEl = document.getElementById('heroTypewriter');
-  if (typewriterEl) {
-    const words = ['insights.', 'solutions.', 'applications.', 'impact.'];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function type() {
-      const currentWord = words[wordIndex];
-      if (isDeleting) {
-        typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-      } else {
-        typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-      }
-
-      let speed = isDeleting ? 60 : 120;
-
-      if (!isDeleting && charIndex === currentWord.length) {
-        speed = 2000;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        speed = 400;
-      }
-
-      setTimeout(type, speed);
-    }
-
-    type();
-  }
-
-  /**
-   * Fade-in on scroll — Intersection Observer
-   */
-  const fadeEls = document.querySelectorAll('.fade-in-up');
+  /* ── Fade-up on scroll ───────────────────────────────── */
+  const fadeEls = document.querySelectorAll('.fade-up');
   if (fadeEls.length) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => io.observe(el));
+  }
+
+  /* ── Counter animation ───────────────────────────────── */
+  const counters = document.querySelectorAll('[data-count]');
+  if (counters.length) {
+    const cio = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = +el.dataset.count;
+        const duration = 1600;
+        const start = performance.now();
+        function step(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(ease * target);
+          if (progress < 1) requestAnimationFrame(step);
         }
+        requestAnimationFrame(step);
+        cio.unobserve(el);
       });
-    }, { threshold: 0.15 });
-
-    fadeEls.forEach(el => observer.observe(el));
+    }, { threshold: 0.5 });
+    counters.forEach(el => cio.observe(el));
   }
 
-  /**
-   * Service tab cards — smooth scroll
-   */
-  on('click', '.service-tab-card', function(e) {
-    e.preventDefault();
-    select('.service-tab-card', true).forEach(card => card.classList.remove('active'));
-    this.classList.add('active');
-    const target = this.getAttribute('href');
-    if (target && select(target)) {
-      scrollto(target);
+  /* ── Testimonial slider ──────────────────────────────── */
+  const swiperEl = document.querySelector('.t-swiper');
+  if (swiperEl && window.Swiper) {
+    const swiper = new Swiper(swiperEl, {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 2,
+      breakpoints: { 768: { slidesPerView: 2 } },
+    });
+    const prev = document.getElementById('tPrev');
+    const next = document.getElementById('tNext');
+    if (prev) prev.addEventListener('click', () => swiper.slidePrev());
+    if (next) next.addEventListener('click', () => swiper.slideNext());
+  }
+
+  /* ── Hero viz: code typewriter ──────────────────────── */
+  const codeOutput = document.getElementById('codeOutput');
+  if (codeOutput) {
+    const lines = [
+      `<span class="code-cm"># Load survey dataset</span>`,
+      `<span class="code-kw">library</span>(<span class="code-fn">tidyverse</span>)`,
+      `df <span class="code-kw">&lt;-</span> <span class="code-fn">read_csv</span>(<span class="code-str">"baseline_2024.csv"</span>)`,
+      ``,
+      `<span class="code-cm"># Run impact model</span>`,
+      `model <span class="code-kw">&lt;-</span> <span class="code-fn">lm</span>(impact ~ sector + region, df)`,
+      `<span class="code-fn">summary</span>(model)`,
+      ``,
+      `<span class="code-cm"># Accuracy</span>`,
+      `<span class="code-out">R² = 0.942 · p &lt; 0.001 ✓</span>`,
+    ];
+    let li = 0;
+    function typeLine() {
+      if (li >= lines.length) {
+        setTimeout(() => { codeOutput.innerHTML = ''; li = 0; typeLine(); }, 3000);
+        return;
+      }
+      const el = document.createElement('div');
+      el.innerHTML = lines[li];
+      codeOutput.appendChild(el);
+      // scroll to bottom
+      codeOutput.scrollTop = codeOutput.scrollHeight;
+      li++;
+      setTimeout(typeLine, li === lines.length ? 800 : Math.random() * 220 + 120);
     }
-  }, true);
-
-  /**
-   * PureCounter
-   */
-  if (typeof PureCounter !== 'undefined') {
-    new PureCounter();
+    setTimeout(typeLine, 800);
   }
 
-  /**
-   * Skills animation (sub-pages)
-   */
-  if (typeof Waypoint !== 'undefined') {
-    let skilsContent = select('.skills-content');
-    if (skilsContent) {
-      new Waypoint({
-        element: skilsContent,
-        offset: '80%',
-        handler: function() {
-          let progress = select('.progress .progress-bar', true);
-          progress.forEach((el) => {
-            el.style.width = el.getAttribute('aria-valuenow') + '%'
-          });
-        }
-      })
+  /* ── Hero viz: bar chart build ───────────────────────── */
+  const vizBars = document.getElementById('vizBars');
+  if (vizBars) {
+    const fills = vizBars.querySelectorAll('.viz-bar-fill');
+    const io = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      fills.forEach((el, i) => {
+        setTimeout(() => {
+          el.style.width = el.dataset.w + '%';
+        }, i * 180);
+      });
+      io.disconnect();
+    }, { threshold: 0.3 });
+    io.observe(vizBars);
+    // animate on load too (hero is visible immediately)
+    setTimeout(() => {
+      fills.forEach((el, i) => {
+        setTimeout(() => { el.style.width = el.dataset.w + '%'; }, 600 + i * 180);
+      });
+    }, 400);
+  }
+
+  /* ── Hero viz: sparkline ─────────────────────────────── */
+  const sparkLine = document.getElementById('sparkLine');
+  const sparkFill = document.getElementById('sparkFill');
+  if (sparkLine) {
+    const pts = [200,180,210,160,230,190,250,170,240,200,220,180,260,150,280,160,300,140,320,120,340,110,360,90,380,80,400,60].map((v,i)=>i%2===0?v/2:v/8);
+    // normalise to viewBox 200×40
+    const xs = pts.filter((_,i)=>i%2===0);
+    const ys = pts.filter((_,i)=>i%2!==0);
+    const minY=Math.min(...ys), maxY=Math.max(...ys);
+    const W=200, H=36;
+    const norm = xs.map((x,i)=>{
+      const nx = (x/Math.max(...xs))*W;
+      const ny = H - ((ys[i]-minY)/(maxY-minY))*(H-4) - 2;
+      return `${nx.toFixed(1)},${ny.toFixed(1)}`;
+    });
+    // Animate drawing
+    let drawn = 0;
+    function drawSpark() {
+      if (drawn >= norm.length) return;
+      drawn++;
+      const pts2 = norm.slice(0,drawn).join(' ');
+      sparkLine.setAttribute('points', pts2);
+      const last = norm[drawn-1].split(',');
+      const fillPts = norm.slice(0,drawn).join(' ') + ` ${last[0]},${H} 0,${H}`;
+      sparkFill.setAttribute('points', fillPts);
+      setTimeout(drawSpark, 60);
     }
+    setTimeout(drawSpark, 1200);
   }
 
-  /**
-   * Set current year in footer
-   */
-  const yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
+  /* ── Contact form ────────────────────────────────────── */
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type=submit]');
+      btn.textContent = 'Sending…';
+      setTimeout(() => {
+        btn.textContent = 'Message Sent';
+        btn.style.background = '#2a7a4b';
+        form.reset();
+      }, 1200);
+    });
   }
 
-})()
+});
