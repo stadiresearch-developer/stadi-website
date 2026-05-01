@@ -30,20 +30,26 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  /* ── Typewriter ──────────────────────────────────────── */
-  const tw = document.getElementById('tw');
-  if (tw) {
-    const words = ['impact.', 'insights.', 'results.', 'decisions.'];
-    let wi = 0, ci = 0, del = false;
-    function tick() {
-      const w = words[wi];
-      tw.textContent = del ? w.slice(0, --ci) : w.slice(0, ++ci);
-      let delay = del ? 55 : 110;
-      if (!del && ci === w.length)  { delay = 2200; del = true; }
-      if (del  && ci === 0)         { del = false; wi = (wi+1) % words.length; delay = 350; }
-      setTimeout(tick, delay);
-    }
-    tick();
+  /* ── Rotating taglines ─────────────────────────────────── */
+  const taglineEl = document.getElementById('rotatingTagline');
+  if (taglineEl) {
+    const taglines = [
+      'We research what matters. We build what works.',
+      'Turning evidence into action through data \u2014 across Kenya, East Africa, and beyond.',
+      'Where rigorous research meets intelligent data solutions.',
+      'Research-rooted. Data-powered. Impact-driven.'
+    ];
+    let ti = 0;
+    taglineEl.textContent = taglines[0];
+    taglineEl.style.transition = 'opacity 0.6s ease';
+    setInterval(() => {
+      taglineEl.style.opacity = '0';
+      setTimeout(() => {
+        ti = (ti + 1) % taglines.length;
+        taglineEl.textContent = taglines[ti];
+        taglineEl.style.opacity = '1';
+      }, 600);
+    }, 5000);
   }
 
   /* ── Fade-up on scroll ───────────────────────────────── */
@@ -106,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `<span class="code-fn">summary</span>(model)`,
       ``,
       `<span class="code-cm"># Accuracy</span>`,
-      `<span class="code-out">R² = 0.942 · p &lt; 0.001 ✓</span>`,
+      `<span class="code-out">R\u00B2 = 0.942 \u00B7 p &lt; 0.001 \u2713</span>`,
     ];
     let li = 0;
     function typeLine() {
@@ -117,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const el = document.createElement('div');
       el.innerHTML = lines[li];
       codeOutput.appendChild(el);
-      // scroll to bottom
       codeOutput.scrollTop = codeOutput.scrollHeight;
       li++;
       setTimeout(typeLine, li === lines.length ? 800 : Math.random() * 220 + 120);
@@ -139,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
       io.disconnect();
     }, { threshold: 0.3 });
     io.observe(vizBars);
-    // animate on load too (hero is visible immediately)
     setTimeout(() => {
       fills.forEach((el, i) => {
         setTimeout(() => { el.style.width = el.dataset.w + '%'; }, 600 + i * 180);
@@ -152,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const sparkFill = document.getElementById('sparkFill');
   if (sparkLine) {
     const pts = [200,180,210,160,230,190,250,170,240,200,220,180,260,150,280,160,300,140,320,120,340,110,360,90,380,80,400,60].map((v,i)=>i%2===0?v/2:v/8);
-    // normalise to viewBox 200×40
     const xs = pts.filter((_,i)=>i%2===0);
     const ys = pts.filter((_,i)=>i%2!==0);
     const minY=Math.min(...ys), maxY=Math.max(...ys);
@@ -162,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const ny = H - ((ys[i]-minY)/(maxY-minY))*(H-4) - 2;
       return `${nx.toFixed(1)},${ny.toFixed(1)}`;
     });
-    // Animate drawing
     let drawn = 0;
     function drawSpark() {
       if (drawn >= norm.length) return;
@@ -183,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', e => {
       e.preventDefault();
       const btn = form.querySelector('button[type=submit]');
-      btn.textContent = 'Sending…';
+      btn.textContent = 'Sending\u2026';
       setTimeout(() => {
         btn.textContent = 'Message Sent';
         btn.style.background = '#2a7a4b';

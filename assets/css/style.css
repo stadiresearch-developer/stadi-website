@@ -648,3 +648,68 @@ section { position: relative; overflow: hidden; }
 @media(max-width:768px) {
   .header-cta { display: none; }
 }
+
+/* ── Hero rotating tagline ───────────────────────────────── */
+.hero-tagline {
+  font-family: var(--font-h);
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 600;
+  color: var(--crimson);
+  margin-bottom: 20px;
+  min-height: 1.5em;
+}
+
+/* ── Tool chips (under About Us) ─────────────────────────── */
+.tool-chip {
+  display: inline-block;
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  padding: 10px 24px;
+  font-family: var(--font-h);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-1);
+  transition: border-color .25s var(--ease), background .25s;
+}
+.tool-chip:hover {
+  border-color: var(--crimson);
+  background: var(--crimson-lt);
+}
+
+/* ── 6-card service grid ─────────────────────────────────── */
+.service-cards-6 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* ── Pipeline grid (About page) ──────────────────────────── */
+.pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+  margin-top: 48px;
+}
+.pipeline-step {
+  background: var(--navy-card);
+  padding: 36px 28px;
+  border-top: 3px solid var(--crimson);
+}
+.pipeline-num {
+  font-family: var(--font-h);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--crimson);
+  margin-bottom: 12px;
+}
+.pipeline-step h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-1);
+  margin-bottom: 10px;
+}
+.pipeline-step p {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
