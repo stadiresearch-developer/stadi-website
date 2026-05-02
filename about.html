@@ -4,12 +4,235 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us — Stadi Research &amp; Analytics</title>
-  <meta name="description" content="Learn about Stadi Research &amp; Analytics — our story, values, mission and team.">
+  <meta name="description" content="Stadi Research &amp; Analytics — our story, mission, values and the pipeline that takes you from data to decisions.">
   <link rel="icon" href="assets/img/Logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/css/style.css?v=4" rel="stylesheet">
+  <link href="assets/css/style.css?v=5" rel="stylesheet">
+  <style>
+    /* ── About page extras ─────────────────────────────── */
+
+    /* Hero */
+    .about-page-hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      position: relative; overflow: hidden;
+      padding-top: 80px;
+    }
+    .aph-slideshow {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .aph-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1.4s ease;
+    }
+    .aph-slide.active { opacity: 1; }
+    .aph-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to bottom,
+        rgba(8,13,24,.55) 0%,
+        rgba(8,13,24,.4) 40%,
+        rgba(8,13,24,.85) 75%,
+        rgba(8,13,24,1) 100%);
+    }
+    .aph-content {
+      position: relative; z-index: 2;
+      padding: clamp(48px,6vw,96px) 0 0;
+      text-align: center;
+    }
+    .aph-eyebrow {
+      font-family: var(--font-h); font-size: 11px; font-weight: 700;
+      letter-spacing: .25em; text-transform: uppercase; color: var(--crimson);
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      margin-bottom: 20px;
+    }
+    .aph-eyebrow::before, .aph-eyebrow::after {
+      content: ''; width: 32px; height: 2px; background: var(--crimson);
+    }
+    .aph-headline {
+      font-family: var(--font-h); font-size: clamp(48px,7vw,100px);
+      font-weight: 900; color: var(--white); letter-spacing: -.04em;
+      line-height: .95; margin-bottom: 24px;
+    }
+    .aph-headline em {
+      font-style: normal; color: var(--crimson);
+    }
+    .aph-mission {
+      font-size: clamp(16px,2vw,20px); color: rgba(255,255,255,.65);
+      max-width: 680px; margin: 0 auto 48px; line-height: 1.65;
+      font-style: italic;
+    }
+    .aph-ctas {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 64px;
+    }
+
+    /* Stats bar */
+    .aph-stats {
+      position: relative; z-index: 2;
+      background: rgba(8,13,24,.0);
+      padding-bottom: 0;
+    }
+    .aph-stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .aph-stat {
+      padding: 32px 20px;
+      border-right: 1px solid rgba(255,255,255,.07);
+      text-align: center;
+      position: relative;
+    }
+    .aph-stat:last-child { border-right: none; }
+    .aph-stat::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 40px; height: 3px; background: var(--crimson);
+    }
+    .aph-stat-num {
+      font-family: var(--font-h); font-size: clamp(36px,4vw,56px);
+      font-weight: 900; color: var(--white); letter-spacing: -.04em;
+      line-height: 1; display: block;
+    }
+    .aph-stat-num sup { font-size: 50%; color: var(--crimson); vertical-align: super; }
+    .aph-stat-label {
+      font-family: var(--font-h); font-size: 10px; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(255,255,255,.4); margin-top: 6px; display: block;
+    }
+    @media(max-width:640px) {
+      .aph-stats-inner { grid-template-columns: 1fr 1fr; }
+      .aph-stat:nth-child(2) { border-right: none; }
+    }
+
+    /* ── Story section ─────────────────────────────────── */
+    .about-story {
+      padding: 100px 0;
+      background: var(--navy);
+    }
+    .story-quote {
+      font-size: clamp(22px,3vw,36px); font-weight: 700;
+      font-family: var(--font-h); color: var(--text-1);
+      line-height: 1.25; letter-spacing: -.02em; margin-bottom: 24px;
+    }
+    .story-quote span { color: var(--crimson); }
+
+    /* ── Pipeline ──────────────────────────────────────── */
+    .pipeline-sec {
+      padding: 100px 0;
+      background: var(--navy-2);
+    }
+    .pipeline-steps {
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      gap: 2px;
+      margin-top: 56px;
+      position: relative;
+    }
+    .pipeline-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: 0; right: 0; height: 2px;
+      background: linear-gradient(to right, var(--crimson), var(--border));
+      z-index: 0;
+    }
+    .pipeline-step {
+      background: var(--navy-card); padding: 32px 20px 28px;
+      position: relative; z-index: 1;
+      transition: background .25s;
+    }
+    .pipeline-step:hover { background: #182040; }
+    .pipeline-step:first-child { border-top: 3px solid var(--crimson); }
+    .pipeline-step:not(:first-child) { border-top: 3px solid var(--border); }
+    .ps-num {
+      font-family: var(--font-h); font-size: 11px; font-weight: 700;
+      letter-spacing: .2em; color: var(--crimson); margin-bottom: 16px;
+    }
+    .ps-icon { font-size: 22px; color: var(--text-3); margin-bottom: 12px; }
+    .pipeline-step:hover .ps-icon { color: var(--crimson); }
+    .ps-title { font-size: 14px; font-weight: 800; color: var(--text-1); margin-bottom: 8px; }
+    .ps-desc { font-size: 12px; color: var(--text-2); line-height: 1.6; }
+    @media(max-width:992px) {
+      .pipeline-steps { grid-template-columns: repeat(3,1fr); }
+      .pipeline-steps::before { display:none; }
+    }
+    @media(max-width:580px) {
+      .pipeline-steps { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── Values ────────────────────────────────────────── */
+    .values-sec {
+      padding: 100px 0;
+      background: var(--navy-3);
+    }
+    .values-grid-new {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 2px;
+      margin-top: 56px;
+    }
+    .val-card {
+      padding: 40px 32px;
+      background: var(--navy-card);
+      position: relative;
+      overflow: hidden;
+      transition: background .25s;
+    }
+    .val-card:hover { background: #182040; }
+    .val-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 4px; height: 0;
+      background: var(--crimson);
+      transition: height .4s var(--ease);
+    }
+    .val-card:hover::before { height: 100%; }
+    .val-icon { font-size: 26px; color: var(--crimson); margin-bottom: 18px; }
+    .val-card h4 { font-size: 16px; font-weight: 800; color: var(--text-1); margin-bottom: 10px; }
+    .val-card p { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+
+    /* ── Team ──────────────────────────────────────────── */
+    .team-sec {
+      padding: 100px 0;
+      background: var(--navy);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap: 2px;
+      margin-top: 56px;
+    }
+    .team-card { position: relative; overflow: hidden; background: var(--navy-card); }
+    .team-card-img {
+      aspect-ratio: 3/4; overflow: hidden;
+      position: relative;
+    }
+    .team-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .5s var(--ease);
+    }
+    .team-card:hover .team-card-img img { transform: scale(1.05); }
+    .team-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(8,13,24,.95) 0%, transparent 50%);
+    }
+    .team-card-info {
+      padding: 20px;
+      border-top: 3px solid transparent;
+      transition: border-color .25s;
+    }
+    .team-card:hover .team-card-info { border-top-color: var(--crimson); }
+    .team-card-info h4 { font-size: 15px; font-weight: 800; color: var(--text-1); margin-bottom: 4px; }
+    .team-card-info span { font-size: 12px; color: var(--crimson); font-family: var(--font-h); font-weight: 600; letter-spacing: .06em; }
+
+    /* ── Skills ────────────────────────────────────────── */
+    .skills-sec {
+      padding: 100px 0;
+      background: var(--navy-2);
+    }
+  </style>
 </head>
 <body>
 
@@ -41,220 +264,319 @@
   </nav>
 </div>
 
-<!-- Page Hero -->
-<section class="page-hero">
-  <div class="container">
-    <span class="label">Our Story</span>
-    <h1>About Us</h1>
-    <p>Specialised team turning data into insights, actions &amp; decisions</p>
+<!-- ======= HERO ======= -->
+<section class="about-page-hero">
+  <!-- Crossfade background slideshow -->
+  <div class="aph-slideshow" id="aphSlideshow">
+    <div class="aph-slide active" style="background-image:url('assets/img/homepage_1.jpg')"></div>
+    <div class="aph-slide" style="background-image:url('assets/img/app.jpg')"></div>
+    <div class="aph-slide" style="background-image:url('assets/img/app3.jpg')"></div>
+    <div class="aph-slide" style="background-image:url('assets/img/app4.jpg')"></div>
+    <div class="aph-slide" style="background-image:url('assets/img/homepage_2.jpg')"></div>
   </div>
-</section>
-<div class="breadcrumb-bar">
-  <div class="container">
-    <ol><li><a href="/">Home</a></li><li>About</li></ol>
-  </div>
-</div>
+  <div class="aph-overlay"></div>
 
-<!-- Stats bar -->
-<section style="background:var(--navy-3); padding:0; border-bottom:1px solid var(--border);">
-  <div class="container">
-    <div class="stats-grid" style="grid-template-columns:repeat(5,1fr);">
-      <div class="stat-box fade-up">
-        <span class="stat-num"><span data-count="50">0</span><sup>+</sup></span>
-        <span class="stat-label">Research Projects</span>
+  <!-- Centred content -->
+  <div class="aph-content container">
+    <div class="aph-eyebrow">Our Story</div>
+    <h1 class="aph-headline">
+      Where <em>Skill</em> Meets<br>
+      <em>Evidence.</em>
+    </h1>
+    <p class="aph-mission">
+      "To generate evidence that matters and build data solutions that work — empowering organisations and communities to make better decisions, every day."
+    </p>
+    <div class="aph-ctas">
+      <a href="#story" class="btn-cta btn-cta-primary">Our Story <i class="bi bi-arrow-down"></i></a>
+      <a href="/contact" class="btn-cta btn-cta-outline">Work With Us <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <!-- Stats bar anchored to bottom of hero -->
+  <div class="aph-stats container">
+    <div class="aph-stats-inner">
+      <div class="aph-stat">
+        <span class="aph-stat-num"><span data-count="50">0</span><sup>+</sup></span>
+        <span class="aph-stat-label">Research Projects</span>
       </div>
-      <div class="stat-box fade-up">
-        <span class="stat-num"><span data-count="12">0</span><sup>+</sup></span>
-        <span class="stat-label">Countries Reached</span>
+      <div class="aph-stat">
+        <span class="aph-stat-num"><span data-count="12">0</span><sup>+</sup></span>
+        <span class="aph-stat-label">Countries Reached</span>
       </div>
-      <div class="stat-box fade-up">
-        <span class="stat-num"><span data-count="30">0</span><sup>+</sup></span>
-        <span class="stat-label">Counties in Kenya</span>
+      <div class="aph-stat">
+        <span class="aph-stat-num"><span data-count="17">0</span><sup>+</sup></span>
+        <span class="aph-stat-label">Organisations Trained</span>
       </div>
-      <div class="stat-box fade-up">
-        <span class="stat-num"><span data-count="17">0</span><sup>+</sup></span>
-        <span class="stat-label">Organisations Trained</span>
-      </div>
-      <div class="stat-box fade-up">
-        <span class="stat-num"><span data-count="11">0</span><sup>+</sup></span>
-        <span class="stat-label">Sectors Served</span>
+      <div class="aph-stat">
+        <span class="aph-stat-num"><span data-count="11">0</span><sup>+</sup></span>
+        <span class="aph-stat-label">Sectors Served</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Our Story -->
-<section class="about-body dark">
+<!-- ======= STORY ======= -->
+<section class="about-story" id="story">
   <div class="container">
     <div class="row g-5 align-items-center">
+
+      <!-- Crossfade image slider -->
       <div class="col-lg-6 fade-up">
-        <div class="svc-img-wrap"><img src="assets/img/app4.jpg" alt="About Stadi"></div>
+        <div class="img-cf" style="aspect-ratio:4/3;" id="storySlider">
+          <div class="img-cf-frame on"  style="background-image:url('assets/img/app4.jpg')"></div>
+          <div class="img-cf-frame"     style="background-image:url('assets/img/about.jpg')"></div>
+          <div class="img-cf-frame"     style="background-image:url('assets/img/skills-img.jpg')"></div>
+          <div class="img-cf-frame"     style="background-image:url('assets/img/home_image_1.jpg')"></div>
+          <div class="cf-dots" id="storyDots"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 fade-up">
+        <span class="label">Who We Are</span>
+        <p class="story-quote"><span>Stadi</span> means <span>skill</span> or <span>expertise</span> in Kiswahili. That is exactly what we bring.</p>
+        <p style="color:var(--text-2); font-size:16px; line-height:1.8; margin-bottom:20px;">Stadi Research &amp; Analytics began as a specialist research and survey firm, built on the conviction that great decisions require great evidence. Over the years, we have partnered with development organisations, government agencies, agribusinesses, and private companies across East Africa and the continent.</p>
+        <p style="color:var(--text-2); font-size:16px; line-height:1.8; margin-bottom:32px;">As the data landscape changed — and as the opportunities created by AI and machine learning became tangible — we expanded our scope. We are now not only research partners; we are builders. We develop data solutions that collect, trace, analyse, and predict.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px;">
+          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; color:var(--text-2);">R</span>
+          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; color:var(--text-2);">Python</span>
+          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; color:var(--text-2);">STATA</span>
+          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; color:var(--text-2);">SPSS</span>
+          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; color:var(--text-2);">Theory of Change</span>
+          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; color:var(--text-2);">Co-creation</span>
+        </div>
+        <a href="/services" class="btn-cta btn-cta-primary">Our Services <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= MISSION / VISION ======= -->
+<section style="padding:100px 0; background:var(--navy-2);">
+  <div class="container">
+    <div class="row g-2">
+      <div class="col-lg-6 fade-up">
+        <div style="background:var(--navy-card); padding:56px 48px; height:100%; border-top:3px solid var(--crimson);">
+          <span class="label">Vision</span>
+          <h2 style="font-size:clamp(22px,3vw,36px); line-height:1.2; margin-bottom:20px;">Africa's most trusted partner at the intersection of research, analytics &amp; AI.</h2>
+          <p style="color:var(--text-2); font-size:16px; line-height:1.8;">To be Africa's most trusted partner at the intersection of research, analytics, evaluation and AI-enabled data solutions.</p>
+        </div>
       </div>
       <div class="col-lg-6 fade-up">
-        <span class="label">Our Story</span>
-        <h2>From specialist research firm to full-spectrum data partner.</h2>
-        <p>Stadi Research &amp; Analytics began as a specialist research and survey firm, built on the conviction that great decisions require great evidence. Over the years, we have partnered with development organisations, government agencies, agribusinesses, and private companies across East Africa and the continent, delivering surveys, evaluations, and analytics that inform strategy, secure funding, and improve outcomes.</p>
-        <p>As the data landscape changed — and as the opportunities created by AI and machine learning became tangible — we expanded our scope. We are now not only research partners; we are builders. We develop data solutions that collect, trace, analyse, and predict.</p>
-        <p>Our name, <strong>Stadi</strong>, means skill or expertise in Kiswahili. That is exactly what we bring: the skill to ask the right questions, and the expertise to build the right solutions.</p>
+        <div style="background:var(--navy-3); padding:56px 48px; height:100%; border-top:3px solid var(--border);">
+          <span class="label">Mission</span>
+          <h2 style="font-size:clamp(22px,3vw,36px); line-height:1.2; margin-bottom:20px;">Evidence that matters. Solutions that work.</h2>
+          <p style="color:var(--text-2); font-size:16px; line-height:1.8;">To generate evidence that matters and build data solutions that work — empowering organisations and communities to make better data-based decisions, every day.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Mission & Vision -->
-<section class="about-body light">
-  <div class="container">
-    <span class="label fade-up">Our Direction</span>
-    <div class="mission-vision">
-      <div class="mv-card fade-up">
-        <h3>Our Mission</h3>
-        <p>To generate evidence that matters and build data solutions that work — empowering organisations and communities to make better data-based decisions, every day.</p>
-      </div>
-      <div class="mv-card fade-up">
-        <h3>Our Vision</h3>
-        <p>To be Africa's most trusted partner at the intersection of research, analytics, evaluation and AI-enabled data solutions.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Values -->
-<section class="about-body dark">
-  <div class="container">
-    <div class="fade-up">
-      <span class="label">Who We Are</span>
-      <h2>Our Values</h2>
-    </div>
-    <div class="values-grid">
-      <div class="value-card fade-up">
-        <h4>Rigour</h4>
-        <p>Every finding we report is one we can defend.</p>
-      </div>
-      <div class="value-card fade-up">
-        <h4>Relevance</h4>
-        <p>We design for context. Our tools, methods, and solutions are built for the realities of Africa.</p>
-      </div>
-      <div class="value-card fade-up">
-        <h4>Innovation</h4>
-        <p>We embrace new technologies and approaches, including AI and machine learning because they genuinely improve outcomes.</p>
-      </div>
-      <div class="value-card fade-up">
-        <h4>Impact</h4>
-        <p>We measure our success not by reports delivered, but by decisions improved and lives affected.</p>
-      </div>
-      <div class="value-card fade-up">
-        <h4>Integrity</h4>
-        <p>We hold ourselves to the highest ethical standards in every engagement, every dataset, every conclusion.</p>
-      </div>
-      <div class="value-card fade-up">
-        <h4>Professionalism</h4>
-        <p>We deliver with precision, rigour and accountability — on time, every time.</p>
-      </div>
-      <div class="value-card fade-up">
-        <h4>Commitment</h4>
-        <p>We are fully invested in your success — we do not walk away until the job is done.</p>
-      </div>
-      <div class="value-card fade-up">
-        <h4>Client First</h4>
-        <p>Your goals drive our work. We listen, adapt and tailor every solution to your unique context.</p>
-      </div>
-      <div class="value-card fade-up">
-        <h4>Efficiency</h4>
-        <p>We respect your time and budget — delivering maximum value with minimum friction.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our Approach — The Stadi Pipeline -->
-<section class="about-body light">
+<!-- ======= PIPELINE ======= -->
+<section class="pipeline-sec">
   <div class="container">
     <div class="fade-up">
       <span class="label">How We Work</span>
-      <h2>Our Approach — The Stadi Pipeline</h2>
-      <p style="color:var(--text-2); max-width:680px;">We think of our work as a pipeline from raw reality to informed action:</p>
+      <h2 style="font-size:clamp(28px,4vw,52px);">The Stadi Pipeline</h2>
+      <p style="color:var(--text-2); font-size:16px; max-width:560px; margin-top:12px;">From raw reality to informed action — six stages, one seamless partner.</p>
     </div>
-    <div class="pipeline-grid">
+    <div class="pipeline-steps">
       <div class="pipeline-step fade-up">
-        <div class="pipeline-num">1</div>
-        <h4>Understand</h4>
-        <p>Stakeholder engagement, scoping, and problem definition</p>
+        <div class="ps-num">01</div>
+        <div class="ps-icon"><i class="bi bi-people"></i></div>
+        <div class="ps-title">Understand</div>
+        <p class="ps-desc">Stakeholder engagement, scoping, and problem definition</p>
       </div>
       <div class="pipeline-step fade-up">
-        <div class="pipeline-num">2</div>
-        <h4>Measure</h4>
-        <p>Surveys, KIIs, FGDs, sensors, and administrative data</p>
+        <div class="ps-num">02</div>
+        <div class="ps-icon"><i class="bi bi-clipboard-data"></i></div>
+        <div class="ps-title">Measure</div>
+        <p class="ps-desc">Surveys, KIIs, FGDs, sensors, and administrative data</p>
       </div>
       <div class="pipeline-step fade-up">
-        <div class="pipeline-num">3</div>
-        <h4>Analyse</h4>
-        <p>Statistical modelling, machine learning, geospatial analysis</p>
+        <div class="ps-num">03</div>
+        <div class="ps-icon"><i class="bi bi-bar-chart-line"></i></div>
+        <div class="ps-title">Analyse</div>
+        <p class="ps-desc">Statistical modelling, machine learning, geospatial analysis</p>
       </div>
       <div class="pipeline-step fade-up">
-        <div class="pipeline-num">4</div>
-        <h4>Build</h4>
-        <p>Dashboards, applications, and data platforms</p>
+        <div class="ps-num">04</div>
+        <div class="ps-icon"><i class="bi bi-code-square"></i></div>
+        <div class="ps-title">Build</div>
+        <p class="ps-desc">Dashboards, applications, and data platforms</p>
       </div>
       <div class="pipeline-step fade-up">
-        <div class="pipeline-num">5</div>
-        <h4>Learn</h4>
-        <p>Iterative improvement, monitoring, and longitudinal tracking</p>
+        <div class="ps-num">05</div>
+        <div class="ps-icon"><i class="bi bi-arrow-repeat"></i></div>
+        <div class="ps-title">Learn</div>
+        <p class="ps-desc">Iterative improvement, monitoring, longitudinal tracking</p>
       </div>
       <div class="pipeline-step fade-up">
-        <div class="pipeline-num">6</div>
-        <h4>Act</h4>
-        <p>Recommendations, training, and strategic advisory</p>
+        <div class="ps-num">06</div>
+        <div class="ps-icon"><i class="bi bi-lightning"></i></div>
+        <div class="ps-title">Act</div>
+        <p class="ps-desc">Recommendations, training, and strategic advisory</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Our Team -->
-<section class="about-body dark">
+<!-- ======= VALUES ======= -->
+<section class="values-sec">
+  <div class="container">
+    <div class="fade-up">
+      <span class="label">What Drives Us</span>
+      <h2 style="font-size:clamp(28px,4vw,52px);">Our Values</h2>
+    </div>
+    <div class="values-grid-new">
+      <div class="val-card fade-up">
+        <div class="val-icon"><i class="bi bi-shield-check"></i></div>
+        <h4>Rigour</h4>
+        <p>Every finding we report is one we can defend. We hold ourselves to the highest standards in methodology and data quality.</p>
+      </div>
+      <div class="val-card fade-up">
+        <div class="val-icon"><i class="bi bi-geo-alt"></i></div>
+        <h4>Relevance</h4>
+        <p>We design for context. Our tools, methods, and solutions are built for the realities of Africa — not imported and imposed.</p>
+      </div>
+      <div class="val-card fade-up">
+        <div class="val-icon"><i class="bi bi-cpu"></i></div>
+        <h4>Innovation</h4>
+        <p>We embrace AI and machine learning because they genuinely improve outcomes — not as buzzwords, but as practical tools.</p>
+      </div>
+      <div class="val-card fade-up">
+        <div class="val-icon"><i class="bi bi-graph-up-arrow"></i></div>
+        <h4>Impact</h4>
+        <p>We measure our success not by reports delivered, but by decisions improved and lives affected.</p>
+      </div>
+      <div class="val-card fade-up">
+        <div class="val-icon"><i class="bi bi-patch-check"></i></div>
+        <h4>Integrity</h4>
+        <p>We hold ourselves to the highest ethical standards in every engagement, every dataset, every conclusion.</p>
+      </div>
+      <div class="val-card fade-up">
+        <div class="val-icon"><i class="bi bi-person-heart"></i></div>
+        <h4>Client First</h4>
+        <p>Your goals drive our work. We listen, adapt and tailor every solution to your unique context and needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= TEAM ======= -->
+<section class="team-sec">
+  <div class="container">
+    <div class="fade-up" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:56px;">
+      <div>
+        <span class="label">The People</span>
+        <h2 style="font-size:clamp(28px,4vw,52px); margin-bottom:0;">Our Team</h2>
+      </div>
+      <p style="color:var(--text-2); font-size:15px; max-width:420px; line-height:1.7;">A multidisciplinary collective of researchers, M&amp;E experts, data scientists, geospatial analysts, and software engineers.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card fade-up">
+        <div class="team-card-img">
+          <img src="assets/img/team/amos.jpeg" alt="Amos">
+          <div class="team-card-overlay"></div>
+        </div>
+        <div class="team-card-info">
+          <h4>Amos</h4>
+          <span>Research Lead</span>
+        </div>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-card-img">
+          <img src="assets/img/team/elias.jpg" alt="Elias">
+          <div class="team-card-overlay"></div>
+        </div>
+        <div class="team-card-info">
+          <h4>Elias</h4>
+          <span>Data Scientist</span>
+        </div>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-card-img">
+          <img src="assets/img/team/stanely.png" alt="Stanley">
+          <div class="team-card-overlay"></div>
+        </div>
+        <div class="team-card-info">
+          <h4>Stanley</h4>
+          <span>Software Engineer</span>
+        </div>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-card-img">
+          <img src="assets/img/team/stadi_1.jpg" alt="Team">
+          <div class="team-card-overlay"></div>
+        </div>
+        <div class="team-card-info">
+          <h4>Stadi Team</h4>
+          <span>Analytics &amp; M&amp;E</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SKILLS ======= -->
+<section class="skills-sec">
   <div class="container">
     <div class="row g-5 align-items-center">
-      <div class="col-lg-6 fade-up">
-        <span class="label">Our People</span>
-        <h2>Our Team</h2>
-        <p>The Stadi team is a multidisciplinary collective of researchers, M&amp;E experts, data scientists, geospatial analysts, and software engineers.</p>
-        <p>We are practitioners first. Every solution we propose, we have built. Every method we recommend, we have tested.</p>
-        <a href="/team" class="btn-cta btn-cta-primary mt-3">Meet the Team <i class="bi bi-arrow-right"></i></a>
+      <div class="col-lg-5 fade-up">
+        <!-- Crossfade slider for skills section -->
+        <div class="img-cf" style="aspect-ratio:4/3;" id="skillsSlider">
+          <div class="img-cf-frame on"  style="background-image:url('assets/img/skills-img.jpg')"></div>
+          <div class="img-cf-frame"     style="background-image:url('assets/img/app.jpg')"></div>
+          <div class="img-cf-frame"     style="background-image:url('assets/img/app2.jpg')"></div>
+          <div class="cf-dots" id="skillsDots"></div>
+        </div>
       </div>
-      <div class="col-lg-6 fade-up">
-        <div class="svc-img-wrap"><img src="assets/img/skills-img.jpg" alt="Our team"></div>
+      <div class="col-lg-6 offset-lg-1 fade-up">
+        <span class="label">Expertise</span>
+        <h2 style="font-size:clamp(26px,3vw,40px); margin-bottom:12px;">Statistical Tools &amp; Competencies</h2>
+        <p style="color:var(--text-2); font-size:15px; margin-bottom:36px; line-height:1.8;">We have a competent team with proficiency in leading statistical tools for data manipulation, analysis and visualisation.</p>
+        <div class="skills-bars">
+          <div class="skill-row fade-up">
+            <div class="skill-name"><span>R Programming</span><span style="color:var(--crimson);">Expert</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:0%;transition:width 1.2s ease;" data-w="100"></div></div>
+          </div>
+          <div class="skill-row fade-up">
+            <div class="skill-name"><span>Python</span><span style="color:var(--crimson);">Expert</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:0%;transition:width 1.2s ease;" data-w="100"></div></div>
+          </div>
+          <div class="skill-row fade-up">
+            <div class="skill-name"><span>SPSS &amp; STATA</span><span style="color:var(--crimson);">Expert</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:0%;transition:width 1.2s ease;" data-w="100"></div></div>
+          </div>
+          <div class="skill-row fade-up">
+            <div class="skill-name"><span>SAS</span><span style="color:var(--text-3);">Advanced</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:0%;transition:width 1.2s ease;" data-w="90"></div></div>
+          </div>
+          <div class="skill-row fade-up">
+            <div class="skill-name"><span>NVIVO &amp; ATLAS.ti</span><span style="color:var(--text-3);">Advanced</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:0%;transition:width 1.2s ease;" data-w="90"></div></div>
+          </div>
+          <div class="skill-row fade-up">
+            <div class="skill-name"><span>GIS &amp; Geospatial</span><span style="color:var(--text-3);">Advanced</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:0%;transition:width 1.2s ease;" data-w="85"></div></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Tools graphic -->
-<section style="background:var(--navy-3); padding:60px 0; border-top:1px solid var(--border);">
-  <div class="container">
-    <div class="fade-up" style="text-align:center;">
-      <span class="label">Our Toolkit</span>
-      <h2 style="font-size:clamp(24px,3vw,36px); margin-bottom:32px;">Tools &amp; Competencies</h2>
-    </div>
-    <div class="tools-bar fade-up" style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center;">
-      <span class="tool-chip">Code</span>
-      <span class="tool-chip">R</span>
-      <span class="tool-chip">Python</span>
-      <span class="tool-chip">STATA</span>
-      <span class="tool-chip">Theory of Change</span>
-      <span class="tool-chip">Co-creation</span>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
+<!-- ======= CTA ======= -->
 <section class="cta-banner">
   <div class="container fade-up">
     <span class="label">Work With Us</span>
-    <h2>Ready to turn your data into decisions?</h2>
-    <p>Whether you are launching a new programme, entering a new market, or building a data product from scratch — Stadi is your end-to-end partner. Let us talk.</p>
+    <h2>Ready to turn your data<br>into decisions?</h2>
+    <p>Whether you are launching a programme, entering a new market, or building a data product — Stadi is your end-to-end partner.</p>
     <a href="/contact" class="btn-cta btn-cta-primary">Start a Conversation <i class="bi bi-arrow-right"></i></a>
   </div>
 </section>
 
+<!-- ======= Footer ======= -->
 <footer id="footer">
   <div class="footer-top">
     <div class="container">
@@ -285,10 +607,8 @@
             <h4>Services</h4>
             <ul>
               <li><a href="/services">Research &amp; Evaluation</a></li>
-              <li><a href="/services">Data Analytics &amp; Visualisation</a></li>
-              <li><a href="/services">AI-Enabled Data Solutions</a></li>
-              <li><a href="/services">Solutions &amp; Applications</a></li>
-              <li><a href="/services">Business Intelligence</a></li>
+              <li><a href="/services">Data Analytics</a></li>
+              <li><a href="/services">AI Solutions</a></li>
               <li><a href="/services">Training &amp; Capacity</a></li>
             </ul>
           </div>
@@ -316,5 +636,60 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+/* ── About page specific JS ───────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* Hero background slideshow */
+  const aphSlides = document.querySelectorAll('#aphSlideshow .aph-slide');
+  let aphIdx = 0;
+  setInterval(() => {
+    aphSlides[aphIdx].classList.remove('active');
+    aphIdx = (aphIdx + 1) % aphSlides.length;
+    aphSlides[aphIdx].classList.add('active');
+  }, 4000);
+
+  /* Generic crossfade slider setup */
+  function initCfSlider(sliderEl, dotsEl, interval) {
+    const frames = sliderEl.querySelectorAll('.img-cf-frame');
+    if (!frames.length || !dotsEl) return;
+    let idx = 0;
+
+    // Build dots
+    frames.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'cf-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => { jump(i); });
+      dotsEl.appendChild(d);
+    });
+
+    function jump(to) {
+      frames[idx].classList.remove('on');
+      dotsEl.querySelectorAll('.cf-dot')[idx].classList.remove('active');
+      idx = to;
+      frames[idx].classList.add('on');
+      dotsEl.querySelectorAll('.cf-dot')[idx].classList.add('active');
+    }
+
+    setInterval(() => { jump((idx + 1) % frames.length); }, interval);
+  }
+
+  initCfSlider(document.getElementById('storySlider'),  document.getElementById('storyDots'),  4500);
+  initCfSlider(document.getElementById('skillsSlider'), document.getElementById('skillsDots'), 5000);
+
+  /* Skill bars animate on scroll */
+  const skillFills = document.querySelectorAll('.skill-fill[data-w]');
+  const sio = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.w + '%';
+        sio.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  skillFills.forEach(el => sio.observe(el));
+
+});
+</script>
 </body>
 </html>
