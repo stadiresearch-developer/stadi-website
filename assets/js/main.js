@@ -2,6 +2,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ── Desktop nav active state ────────────────────────── */
+  const __page = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.nav-desk a').forEach(a => {
+    if (a.getAttribute('href') === __page) a.classList.add('on');
+  });
+
   /* ── Header scroll ───────────────────────────────────── */
   const header = document.getElementById('header');
   const onScroll = () => {
@@ -30,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  /* ── Hero headline: show full text first, then cycle ── */
+  /* ── Hero headline: alternate lines one at a time ───── */
   const heroHeadline = document.getElementById('heroHeadline');
   if (heroHeadline) {
     const headlines = [
@@ -52,18 +58,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function segLen(segs) { return segs.reduce((s,x) => s + x.t.length, 0); }
 
     let hi = 0;      // headline index
-    let ci;
-    let state = 'holding'; // start fully shown
-
-    // Show the first headline immediately (already in HTML as fallback)
-    ci = segLen(headlines[0]);
-    heroHeadline.innerHTML = buildHtml(headlines[0], ci);
+    let ci = 0;      // char index
+    let state = 'typing'; // typing | holding | deleting | gap
 
     function tickHeadline() {
       const segs = headlines[hi];
       const total = segLen(segs);
 
-      if (state === 'holding') {
+      if (state === 'typing') {
+        ci++;
+        heroHeadline.innerHTML = buildHtml(segs, ci);
+        if (ci >= total) { state = 'holding'; setTimeout(tickHeadline, 2400); }
+        else setTimeout(tickHeadline, 58);
+
+      } else if (state === 'holding') {
         state = 'deleting';
         setTimeout(tickHeadline, 40);
 
@@ -83,16 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ci = 0;
         state = 'typing';
         setTimeout(tickHeadline, 40);
-
-      } else if (state === 'typing') {
-        ci++;
-        heroHeadline.innerHTML = buildHtml(headlines[hi], ci);
-        if (ci >= segLen(headlines[hi])) { state = 'holding'; setTimeout(tickHeadline, 2400); }
-        else setTimeout(tickHeadline, 58);
       }
     }
-    // Start the cycle after a 3s hold on the first headline
-    setTimeout(tickHeadline, 3000);
+    setTimeout(tickHeadline, 300);
   }
 
 
@@ -106,9 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
       [{ t:'Research-rooted. ', c:'crimson' }, { t:'Data-powered. ', c:'white' }, { t:'Impact-driven.', c:'crimson' }],
     ];
     let ti = 0;        // tagline index
-    let ci;            // char index within flat string
+    let ci = 0;        // char index within flat string
     let deleting = false;
 
+    // Flatten tagline into plain string for typing, then rebuild styled HTML
     function buildHtml(tagline, charCount) {
       let html = '';
       let remaining = charCount;
@@ -125,10 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return tagline.reduce((s, seg) => s + seg.t.length, 0);
     }
 
-    // Show first tagline immediately (matches HTML fallback)
-    ci = flatLen(taglines[0]);
-    twWrap.innerHTML = buildHtml(taglines[0], ci);
-
     function tick() {
       const tl = taglines[ti];
       const total = flatLen(tl);
@@ -140,8 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (deleting  && ci <= 0)      { deleting = false; ti = (ti+1) % taglines.length; delay = 400; }
       setTimeout(tick, delay);
     }
-    // Start cycling after 3s hold
-    setTimeout(() => { deleting = true; tick(); }, 3000);
+    tick();
   }
 
   /* ── Fade-up on scroll ───────────────────────────────── */

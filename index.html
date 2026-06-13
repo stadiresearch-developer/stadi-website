@@ -11,23 +11,32 @@
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stadi Research &amp; Analytics — Data · Insights · Impact</title>
-  <meta name="description" content="Stadi Research &amp; Analytics delivers research, analytics and custom software solutions that turn data into impact.">
+  <title>Stadi Research &amp; Analytics — From Data to Decisions</title>
+  <meta name="description" content="Stadi Research &amp; Analytics delivers rigorous research, advanced analytics and AI-enabled data solutions that turn evidence into action.">
   <link rel="icon" href="assets/img/Logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/css/style.css?v=5" rel="stylesheet">
+  <link href="assets/css/style.css?v=4" rel="stylesheet">
+  <link href="assets/css/home.css?v=2" rel="stylesheet">
 </head>
 <body>
 
 <!-- ======= Header ======= -->
 <header id="header">
   <div class="header-inner">
-    <a href="/" class="logo"><img src="assets/img/logo.svg" alt="Stadi Analytics"></a>
+    <a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="Stadi Research &amp; Analytics"></a>
+    <nav class="nav-desk" aria-label="Primary">
+      <a href="index.html" class="on">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Insights</a>
+      <a href="contact.html">Contact</a>
+    </nav>
     <div class="header-right">
-      <a href="/contact" class="header-cta">Get in Touch</a>
+      <a href="contact.html" class="header-cta">Start a project</a>
       <button class="ham" id="ham" aria-label="Open Menu">
         <span></span><span></span><span></span>
       </button>
@@ -41,11 +50,11 @@
   <nav class="overlay-nav">
     <div class="overlay-rule"></div>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About Us</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/blog">Insights</a></li>
-      <li><a href="/contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="overlay-social">
       <a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -55,282 +64,268 @@
 </div>
 
 <!-- ======= Hero ======= -->
-<section id="hero">
-  <div class="hero-img"></div>
-  <div class="hero-overlay"></div>
-  <div class="container hero-inner">
-    <div class="hero-content">
-      <span class="hero-eyebrow">Research | Analytics | Software Solutions</span>
-      <h1 style="font-size:clamp(36px,5.5vw,76px); margin-bottom:20px; min-height:2.3em;">
-        <span id="heroHeadline" style="display:block;">From <span style="color:var(--crimson)">Data</span> to Decisions.</span>
+<section class="hm-hero" data-screen-label="Hero">
+  <div class="hm-gridlines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="container hm-hero-inner">
+    <div class="hm-hero-copy">
+      <p class="hm-eyebrow">Research · Analytics · AI Solutions <em>— Nairobi, Kenya</em></p>
+      <h1>
+        <span class="reveal-line"><span>From data</span></span>
+        <span class="reveal-line"><span>to <em class="acc">decisions</em></span></span>
+        <span class="reveal-line"><span>that matter.</span></span>
       </h1>
-      <p class="hero-tagline"><span id="twWrap">We research <span style="color:var(--crimson)">what matters.</span> We build <span style="color:var(--crimson)">what works.</span></span><span class="cursor">_</span></p>
-      <p class="hero-sub" style="margin-top:20px;">STADI is a research and analytics firm at the intersection of applied research, advanced analytics, and AI-enabled data solutions — headquartered in Nairobi, Kenya.</p>
-      <div class="hero-ctas">
-        <a href="/services" class="btn-cta btn-cta-primary">Our Services <i class="bi bi-arrow-right"></i></a>
-        <a href="https://youtu.be/VeWtE5NQdqw" class="hero-play" target="_blank" rel="noopener">
-          <span class="play-ring"><i class="bi bi-play-fill"></i></span> Watch Overview
-        </a>
+      <p class="hm-hero-sub">Stadi is a research and analytics firm at the intersection of applied research, advanced analytics and AI-enabled data solutions — turning evidence into action for development partners and private enterprises.</p>
+      <div class="hm-hero-ctas">
+        <a href="services.html" class="btn-cta btn-cta-primary">Explore our services <i class="arr">→</i></a>
+        <a href="https://youtu.be/VeWtE5NQdqw" target="_blank" rel="noopener" class="hm-link">Watch overview <i class="arr">↗</i></a>
       </div>
     </div>
-
-    <!-- ── Animated data/code panel — 7 rotating displays ── -->
-    <div class="hero-viz" aria-hidden="true">
-      <div class="viz-panel-header">
-        <div class="viz-dots">
-          <span class="dot" style="background:#ff5f57"></span>
-          <span class="dot" style="background:#febc2e"></span>
-          <span class="dot" style="background:#28c840"></span>
-        </div>
-        <span class="viz-panel-title" id="vizPanelTitle">stadi_analysis.R</span>
-        <div class="viz-panel-indicators" id="vizIndicators"></div>
+    <div class="hm-hero-photo">
+      <figure>
+        <img src="assets/img/photos/chart-blue-line.jpg" alt="Live analytics trend line on a monitoring dashboard">
+      </figure>
+      <div class="hm-photo-cap">
+        <span>Live programme monitoring</span>
+        <span>1.2921° S, 36.8219° E</span>
       </div>
-      <div class="viz-panel-body" id="vizPanelBody"></div>
     </div>
   </div>
-  <div class="hero-wedge"></div>
-  <div class="hero-dots"></div>
-</section>
-
-<!-- ======= About Intro ======= -->
-<section class="about-intro">
-  <div class="container">
-    <div class="row g-5">
-      <div class="col-lg-5 fade-up">
-        <div class="about-intro-rule"></div>
-        <h2 class="about-intro-heading">Founded on a commitment to rigorous, context-sensitive research — evolved into a full-spectrum research, analytics, evaluation and technology firm.</h2>
+  <div class="hm-stats">
+    <div class="container hm-stats-grid">
+      <div class="hm-stat">
+        <span class="hm-stat-num"><span data-count="50">0</span><sup>+</sup></span>
+        <span class="hm-stat-label">Research projects</span>
       </div>
-      <div class="col-lg-6 offset-lg-1 fade-up">
-        <p class="about-intro-text">We help development partners and private entities make sense of their data — and act on it. From baseline surveys and evaluations to intelligent data systems, we deliver the full evidence-to-action pipeline.</p>
-        <p class="about-intro-text">Our work spans social development, education, agriculture, public health, financial services, climate resilience, and urban planning — always anchored in evidence, always oriented toward impact.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; margin-bottom:32px;">
-          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--text-2);">Code</span>
-          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--text-2);">R</span>
-          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--text-2);">Python</span>
-          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--text-2);">STATA</span>
-          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--text-2);">Theory of Change</span>
-          <span style="background:var(--navy-card); border:1px solid var(--border); padding:6px 14px; font-family:var(--font-h); font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--text-2);">Co-creation</span>
-        </div>
-        <a href="/about" class="btn-cta btn-cta-dark">Learn About Us <i class="bi bi-arrow-right"></i></a>
+      <div class="hm-stat">
+        <span class="hm-stat-num"><span data-count="12">0</span><sup>+</sup></span>
+        <span class="hm-stat-label">Countries reached</span>
+      </div>
+      <div class="hm-stat">
+        <span class="hm-stat-num"><span data-count="17">0</span><sup>+</sup></span>
+        <span class="hm-stat-label">Organisations trained</span>
+      </div>
+      <div class="hm-stat">
+        <span class="hm-stat-num"><span data-count="11">0</span><sup>+</sup></span>
+        <span class="hm-stat-label">Sectors served</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======= Services Cards ======= -->
-<section class="services-row">
+<!-- ======= Discipline marquee ======= -->
+<div class="hm-marquee" aria-hidden="true">
+  <div class="hm-track">
+    <span>Research &amp; Evaluation</span><i></i>
+    <span>Data Analytics</span><i></i>
+    <span>AI Solutions</span><i></i>
+    <span>Software Engineering</span><i></i>
+    <span>Business Intelligence</span><i></i>
+    <span>Training &amp; Capacity</span><i></i>
+    <span>Research &amp; Evaluation</span><i></i>
+    <span>Data Analytics</span><i></i>
+    <span>AI Solutions</span><i></i>
+    <span>Software Engineering</span><i></i>
+    <span>Business Intelligence</span><i></i>
+    <span>Training &amp; Capacity</span><i></i>
+  </div>
+</div>
+
+<!-- ======= About statement ======= -->
+<section class="hm-about" data-screen-label="About">
   <div class="container">
-    <div class="fade-up">
-      <span class="label">What We Do</span>
-      <h2 style="font-size:clamp(32px,4vw,52px); max-width:520px; margin-bottom:0;">Our Services</h2>
+    <span class="label">Who we are</span>
+    <div class="hm-about-grid">
+      <div class="fade-up">
+        <p class="hm-about-statement">Founded on a commitment to rigorous, context-sensitive research — evolved into a full-spectrum research, analytics, evaluation and technology firm.</p>
+      </div>
+      <div class="hm-about-body fade-up">
+        <p>We help development partners and private entities make sense of their data — and act on it. From baseline surveys and evaluations to intelligent data systems, we deliver the full evidence-to-action pipeline.</p>
+        <p>Our work spans social development, education, agriculture, public health, financial services, climate resilience and urban planning — always anchored in evidence, always oriented toward impact.</p>
+        <ul class="hm-tools">
+          <li>R</li>
+          <li>Python</li>
+          <li>STATA</li>
+          <li>Machine learning</li>
+          <li>Theory of change</li>
+          <li>Co-creation</li>
+        </ul>
+        <a href="about.html" class="btn-cta btn-cta-dark">About Stadi <i class="arr">→</i></a>
+      </div>
     </div>
-    <div class="service-cards">
-      <div class="service-card fade-up">
-        <div class="sc-num">01</div>
-        <div class="sc-icon"><i class="bi bi-clipboard-data"></i></div>
+  </div>
+</section>
+
+<!-- ======= Services index ======= -->
+<section class="hm-svc" data-screen-label="Services">
+  <div class="container">
+    <div class="hm-svc-head fade-up">
+      <div>
+        <span class="label">What we do</span>
+        <h2>Six disciplines.<br>One evidence pipeline.</h2>
+      </div>
+      <a href="services.html" class="hm-link">All services <i class="arr">→</i></a>
+    </div>
+    <div class="hm-svc-rows fade-up">
+      <a href="services.html" class="hm-svc-row">
+        <span class="num">01</span>
         <h3>Research &amp; Evaluation</h3>
-        <p>Rigorous baseline surveys, impact assessments, and M&amp;E frameworks that generate credible evidence for funders and programme teams.</p>
-        <a href="/services" class="sc-link">Learn more <i class="bi bi-arrow-right"></i></a>
-      </div>
-      <div class="service-card fade-up">
-        <div class="sc-num">02</div>
-        <div class="sc-icon"><i class="bi bi-bar-chart-line"></i></div>
+        <p>Baseline surveys, impact assessments and M&amp;E frameworks that generate credible evidence.</p>
+        <div class="hm-svc-thumb"><img src="assets/img/photos/hand-bar-chart.jpg" alt="Reviewing printed survey results"></div>
+        <i class="arr">→</i>
+      </a>
+      <a href="services.html" class="hm-svc-row">
+        <span class="num">02</span>
         <h3>Data Analytics &amp; Visualisation</h3>
-        <p>Statistical, machine learning, and deep learning analysis that turns raw data into patterns, predictions, and compelling visual stories.</p>
-        <a href="/services" class="sc-link">Learn more <i class="bi bi-arrow-right"></i></a>
-      </div>
-      <div class="service-card fade-up">
-        <div class="sc-num">03</div>
-        <div class="sc-icon"><i class="bi bi-cpu"></i></div>
+        <p>Statistical and machine-learning analysis that turns raw data into patterns and predictions.</p>
+        <div class="hm-svc-thumb"><img src="assets/img/photos/stacked-area.jpg" alt="Stacked area chart analysis"></div>
+        <i class="arr">→</i>
+      </a>
+      <a href="services.html" class="hm-svc-row">
+        <span class="num">03</span>
         <h3>AI-Enabled Data Solutions</h3>
-        <p>Custom intelligent systems that automate, monitor, provide insights and alert — putting the power of AI to work for your organisation.</p>
-        <a href="/services" class="sc-link">Learn more <i class="bi bi-arrow-right"></i></a>
-      </div>
-      <div class="service-card fade-up">
-        <div class="sc-num">04</div>
-        <div class="sc-icon"><i class="bi bi-code-square"></i></div>
+        <p>Intelligent systems that automate, monitor and alert — putting AI to work for your organisation.</p>
+        <div class="hm-svc-thumb"><img src="assets/img/photos/chart-green-glow.jpg" alt="Real-time data feed on screen"></div>
+        <i class="arr">→</i>
+      </a>
+      <a href="services.html" class="hm-svc-row">
+        <span class="num">04</span>
         <h3>Solutions &amp; Applications</h3>
-        <p>Web and mobile applications, live dashboards, and data platforms built to put insights directly in the hands of decision-makers.</p>
-        <a href="/services" class="sc-link">Learn more <i class="bi bi-arrow-right"></i></a>
-      </div>
-      <div class="service-card fade-up">
-        <div class="sc-num">05</div>
-        <div class="sc-icon"><i class="bi bi-graph-up-arrow"></i></div>
+        <p>Web and mobile applications, live dashboards and data platforms for decision-makers.</p>
+        <div class="hm-svc-thumb"><img src="assets/img/photos/laptop-charts.jpg" alt="Dashboard development on a laptop"></div>
+        <i class="arr">→</i>
+      </a>
+      <a href="services.html" class="hm-svc-row">
+        <span class="num">05</span>
         <h3>Business Intelligence</h3>
-        <p>Market research, customer segmentation, competitive analysis, and operational analytics for private sector growth.</p>
-        <a href="/services" class="sc-link">Learn more <i class="bi bi-arrow-right"></i></a>
-      </div>
-      <div class="service-card fade-up">
-        <div class="sc-num">06</div>
-        <div class="sc-icon"><i class="bi bi-mortarboard"></i></div>
+        <p>Market research, segmentation, competitive analysis and operational analytics for growth.</p>
+        <div class="hm-svc-thumb"><img src="assets/img/photos/retail-charts.jpg" alt="Retail performance charts"></div>
+        <i class="arr">→</i>
+      </a>
+      <a href="services.html" class="hm-svc-row">
+        <span class="num">06</span>
         <h3>Training &amp; Capacity</h3>
-        <p>Hands-on programmes in research methods, data tools, M&amp;E, and AI applications — building your team's internal capability for the long term.</p>
-        <a href="/services" class="sc-link">Learn more <i class="bi bi-arrow-right"></i></a>
-      </div>
+        <p>Hands-on programmes in research methods, data tools, M&amp;E and AI applications.</p>
+        <div class="hm-svc-thumb"><img src="assets/img/photos/charts-pencils.jpg" alt="Workshop materials with charts"></div>
+        <i class="arr">→</i>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ======= Service Detail 1 ======= -->
-<section class="svc-detail dark">
-  <div class="container">
-    <div class="row g-0 align-items-center">
-      <div class="col-lg-6 fade-up">
-        <div class="svc-img-wrap img-cf" id="svcSlider1" style="aspect-ratio:4/3;">
-          <div class="img-cf-frame on"  style="background-image:url('assets/img/app.jpg')"></div>
-          <div class="img-cf-frame"     style="background-image:url('assets/img/homepage_1.jpg')"></div>
-          <div class="img-cf-frame"     style="background-image:url('assets/img/app1.jpg')"></div>
-          <div class="cf-dots" id="svcDots1"></div>
-        </div>
-      </div>
-      <div class="col-lg-6 fade-up">
-        <div class="svc-text">
-          <span class="label">Service 01</span>
-          <div class="svc-icon"><i class="bi bi-clipboard-data"></i></div>
-          <h2>Baseline Survey &amp; M&amp;E</h2>
-          <p>We have deep expertise in designing and implementing baseline surveys, mid-term, outcome and impact assessments of policy, projects and programmes.</p>
-          <p>We support development of M&amp;E frameworks, indicators and work plans that drive evidence-based decision making across sectors.</p>
-          <a href="/services" class="btn-cta btn-cta-primary mt-3">Learn More <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
+<!-- ======= Feature: Research ======= -->
+<section class="hm-feat" data-screen-label="Feature — Research">
+  <div class="hm-feat-img">
+    <img src="assets/img/photos/charts-red-blue.jpg" alt="Printed survey analysis with charts">
+  </div>
+  <div class="hm-feat-txt fade-up">
+    <span class="label">Evidence</span>
+    <h2>Rigour you can take to the board.</h2>
+    <p>We design and implement baseline surveys, mid-term, outcome and impact assessments of policy, projects and programmes — with sampling strategies and quality assurance that stand up to scrutiny.</p>
+    <p>We develop the M&amp;E frameworks, indicators and work plans that drive evidence-based decision making across sectors.</p>
+    <a href="services.html" class="hm-link">Research &amp; evaluation <i class="arr">→</i></a>
   </div>
 </section>
 
-<!-- ======= Service Detail 2 ======= -->
-<section class="svc-detail light">
-  <div class="container">
-    <div class="row g-0 align-items-center flex-lg-row-reverse">
-      <div class="col-lg-6 fade-up">
-        <div class="svc-img-wrap img-cf" id="svcSlider2" style="aspect-ratio:4/3;">
-          <div class="img-cf-frame on"  style="background-image:url('assets/img/homepage_2.jpg')"></div>
-          <div class="img-cf-frame"     style="background-image:url('assets/img/app2.jpg')"></div>
-          <div class="img-cf-frame"     style="background-image:url('assets/img/app3.jpg')"></div>
-          <div class="cf-dots" id="svcDots2"></div>
-        </div>
-      </div>
-      <div class="col-lg-6 fade-up">
-        <div class="svc-text">
-          <span class="label">Service 02</span>
-          <div class="svc-icon"><i class="bi bi-code-square"></i></div>
-          <h2>Solutions &amp; Applications</h2>
-          <p>We design and build custom software — from interactive dashboards and data platforms to tailored web and mobile applications that transform research into operational tools.</p>
-          <p>Our engineering team pairs domain expertise with modern tooling to ship reliable, user-friendly products that put insights into the hands of the people who need them.</p>
-          <a href="/services" class="btn-cta btn-cta-primary mt-3">Learn More <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
+<!-- ======= Feature: Software ======= -->
+<section class="hm-feat flip" data-screen-label="Feature — Software">
+  <div class="hm-feat-img">
+    <img src="assets/img/team/stadi_1.jpg" alt="Application code in development at Stadi">
+  </div>
+  <div class="hm-feat-txt fade-up">
+    <span class="label">Engineering</span>
+    <h2>Insights, shipped as software.</h2>
+    <p>We build custom software — interactive dashboards, data platforms and tailored web and mobile applications that transform research into operational tools.</p>
+    <p>Our engineering team pairs domain expertise with modern tooling to ship reliable products that put insights into the hands of the people who need them.</p>
+    <a href="services.html" class="hm-link">Solutions &amp; applications <i class="arr">→</i></a>
   </div>
 </section>
 
 <!-- ======= Sectors ======= -->
-<section class="sectors-sec">
+<section class="hm-sectors" data-screen-label="Sectors">
   <div class="container">
     <div class="fade-up">
-      <span class="label">Sectors</span>
-      <h2 style="font-size:clamp(32px,4vw,52px); margin-bottom:0;">Sectors We Specialise In</h2>
+      <span class="label">Where we work</span>
+      <h2 style="font-size:clamp(32px,4vw,56px); letter-spacing:-.035em;">Sectors we specialise in</h2>
     </div>
-    <div class="sector-grid">
-      <div class="sector-card fade-up">
-        <div class="sc-icon"><i class="bi bi-bank2"></i></div>
-        <h3>Government &amp; NGO</h3>
-        <p>Supporting public sector and development organisations with rigorous research, M&amp;E frameworks and data-driven policy insights.</p>
+    <div class="hm-sector-grid">
+      <div class="hm-sector fade-up">
+        <span class="num">01</span>
+        <h3>Government &amp; NGOs</h3>
+        <p>Rigorous research, M&amp;E frameworks and data-driven policy insights for public sector and development organisations.</p>
       </div>
-      <div class="sector-card fade-up">
-        <div class="sc-icon"><i class="bi bi-tree"></i></div>
+      <div class="hm-sector fade-up">
+        <span class="num">02</span>
         <h3>Agriculture</h3>
-        <p>Delivering baseline surveys, impact assessments and analytical solutions that drive sustainable agricultural development.</p>
+        <p>Baseline surveys, impact assessments and analytical solutions that drive sustainable agricultural development.</p>
       </div>
-      <div class="sector-card fade-up">
-        <div class="sc-icon"><i class="bi bi-building"></i></div>
+      <div class="hm-sector fade-up">
+        <span class="num">03</span>
         <h3>Banking &amp; Finance</h3>
-        <p>Empowering financial institutions with business analytics, customer insights and predictive models for strategic growth.</p>
+        <p>Business analytics, customer insights and predictive models that power strategic growth for financial institutions.</p>
       </div>
-      <div class="sector-card fade-up">
-        <div class="sc-icon"><i class="bi bi-heart-pulse"></i></div>
+      <div class="hm-sector fade-up">
+        <span class="num">04</span>
         <h3>Healthcare</h3>
-        <p>Health systems research, epidemiological data analysis and programme evaluations that inform better care delivery.</p>
+        <p>Health systems research, epidemiological analysis and programme evaluations that inform better care delivery.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======= Why Us + Stats ======= -->
-<section class="why-sec">
-  <div class="container">
-    <div class="row g-5 align-items-start">
-      <div class="col-lg-6 fade-up">
-        <span class="label">Why Us</span>
-        <h2 style="font-size:clamp(28px,3.5vw,44px); margin-bottom:12px;">Why Choose Stadi?</h2>
-        <p style="color:var(--text-2); font-size:16px;">We are practitioners first. Every solution we propose, we have built. Every method we recommend, we have tested.</p>
-        <ul class="why-list mt-4">
-          <li>
-            <i class="bi bi-check-circle-fill"></i>
-            <div>
-              <strong>Research, Analytics &amp; Engineering Under One Roof</strong>
-              <span>We combine deep domain knowledge with advanced analytics and in-house software engineering to deliver insights and the tools that bring them to life.</span>
-            </div>
-          </li>
-          <li>
-            <i class="bi bi-check-circle-fill"></i>
-            <div>
-              <strong>Designed for African Contexts</strong>
-              <span>Our tools, methods, and solutions are built for the realities of Africa — relevant, rigorous, and ready to deploy.</span>
-            </div>
-          </li>
-          <li>
-            <i class="bi bi-check-circle-fill"></i>
-            <div>
-              <strong>AI &amp; Machine Learning Capability</strong>
-              <span>We embrace new technologies because they genuinely improve outcomes — from predictive models to intelligent data systems.</span>
-            </div>
-          </li>
-          <li>
-            <i class="bi bi-check-circle-fill"></i>
-            <div>
-              <strong>Impact-Oriented</strong>
-              <span>We measure our success not by reports delivered, but by decisions improved and lives affected.</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-6 fade-up">
-        <div class="stats-grid">
-          <div class="stat-box">
-            <span class="stat-num"><span data-count="50">0</span><sup>+</sup></span>
-            <span class="stat-label">Research Projects</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-num"><span data-count="12">0</span><sup>+</sup></span>
-            <span class="stat-label">Countries Reached</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-num"><span data-count="17">0</span><sup>+</sup></span>
-            <span class="stat-label">Organisations Trained</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-num"><span data-count="11">0</span><sup>+</sup></span>
-            <span class="stat-label">Sectors Served</span>
-          </div>
-        </div>
-      </div>
+<!-- ======= Why Stadi ======= -->
+<section class="hm-why" data-screen-label="Why Stadi">
+  <div class="container hm-why-grid">
+    <div class="hm-why-left fade-up">
+      <span class="label">Why Stadi</span>
+      <h2>Practitioners first.</h2>
+      <p>Every solution we propose, we have built. Every method we recommend, we have tested.</p>
     </div>
+    <ul class="hm-why-list fade-up">
+      <li>
+        <span class="num">01</span>
+        <div>
+          <strong>Research, analytics and engineering under one roof</strong>
+          <span>Deep domain knowledge, advanced analytics and in-house software engineering — insights and the tools that bring them to life, from a single team.</span>
+        </div>
+      </li>
+      <li>
+        <span class="num">02</span>
+        <div>
+          <strong>Designed for African contexts</strong>
+          <span>Our tools, methods and solutions are built for the realities of the markets we serve — relevant, rigorous and ready to deploy.</span>
+        </div>
+      </li>
+      <li>
+        <span class="num">03</span>
+        <div>
+          <strong>AI and machine learning capability</strong>
+          <span>We adopt new technologies where they genuinely improve outcomes — from predictive models to intelligent data systems.</span>
+        </div>
+      </li>
+      <li>
+        <span class="num">04</span>
+        <div>
+          <strong>Impact-oriented</strong>
+          <span>We measure success not by reports delivered, but by decisions improved and lives affected.</span>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
 <!-- ======= Testimonials ======= -->
-<section class="testimonials-sec">
+<section class="hm-quote testimonials-sec" data-screen-label="Testimonials" style="padding:clamp(96px,11vw,150px) 0;">
   <div class="container">
     <div class="fade-up">
-      <span class="label">Client Feedback</span>
-      <h2 style="font-size:clamp(28px,3.5vw,44px);">What Our Clients Say</h2>
+      <span class="label">Client feedback</span>
+      <h2 style="font-size:clamp(32px,4vw,56px); letter-spacing:-.035em;">What our clients say</h2>
     </div>
     <div class="testimonials-slider fade-up">
       <div class="t-swiper swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="testimonial-card">
-              <span class="q-mark">"</span>
+              <span class="q-mark">&ldquo;</span>
               <blockquote>Stadi provided exceptional research and insight that directly improved our programme outcomes. Their methodology was rigorous and their team was a pleasure to work with.</blockquote>
               <div class="t-author">
                 <strong>Programme Director</strong>
@@ -340,7 +335,7 @@
           </div>
           <div class="swiper-slide">
             <div class="testimonial-card">
-              <span class="q-mark">"</span>
+              <span class="q-mark">&ldquo;</span>
               <blockquote>The data analytics and visualisation capabilities at Stadi are outstanding. They helped us uncover trends we had completely missed, leading to a 30% improvement in our decision-making process.</blockquote>
               <div class="t-author">
                 <strong>Head of Strategy</strong>
@@ -350,7 +345,7 @@
           </div>
           <div class="swiper-slide">
             <div class="testimonial-card">
-              <span class="q-mark">"</span>
+              <span class="q-mark">&ldquo;</span>
               <blockquote>Their training programmes transformed our team's capacity for data collection and analysis. We now have the skills to conduct baseline surveys independently, which has been invaluable.</blockquote>
               <div class="t-author">
                 <strong>M&amp;E Manager</strong>
@@ -361,148 +356,120 @@
         </div>
       </div>
       <div class="t-controls">
-        <button class="t-btn" id="tPrev"><i class="bi bi-arrow-left"></i></button>
-        <button class="t-btn" id="tNext"><i class="bi bi-arrow-right"></i></button>
+        <button class="t-btn" id="tPrev" aria-label="Previous testimonial"><i class="bi bi-arrow-left"></i></button>
+        <button class="t-btn" id="tNext" aria-label="Next testimonial"><i class="bi bi-arrow-right"></i></button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======= Clients ======= -->
-<section style="padding:80px 0; background:var(--navy-2); border-top:1px solid var(--border);">
+<!-- ======= Insights ======= -->
+<section class="hm-insights" data-screen-label="Insights">
   <div class="container">
-    <div class="fade-up" style="text-align:center; margin-bottom:48px;">
-      <span class="label">Our Reach</span>
-      <h2 style="font-size:clamp(24px,3vw,40px);">Sectors We Work In</h2>
-    </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:2px;">
-      <div style="background:var(--navy-card); padding:28px 20px; display:flex; align-items:center; justify-content:center;" class="fade-up"><img src="assets/img/clients/Banking.png" alt="Banking" style="max-height:40px; width:auto; filter:grayscale(1) brightness(1.8); opacity:.6; transition:all .25s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1) brightness(1.8)';this.style.opacity='.6'"></div>
-      <div style="background:var(--navy-card); padding:28px 20px; display:flex; align-items:center; justify-content:center;" class="fade-up"><img src="assets/img/clients/Agriculture.png" alt="Agriculture" style="max-height:40px; width:auto; filter:grayscale(1) brightness(1.8); opacity:.6; transition:all .25s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1) brightness(1.8)';this.style.opacity='.6'"></div>
-      <div style="background:var(--navy-card); padding:28px 20px; display:flex; align-items:center; justify-content:center;" class="fade-up"><img src="assets/img/clients/NGO.png" alt="NGO" style="max-height:40px; width:auto; filter:grayscale(1) brightness(1.8); opacity:.6; transition:all .25s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1) brightness(1.8)';this.style.opacity='.6'"></div>
-      <div style="background:var(--navy-card); padding:28px 20px; display:flex; align-items:center; justify-content:center;" class="fade-up"><img src="assets/img/clients/Government.png" alt="Government" style="max-height:40px; width:auto; filter:grayscale(1) brightness(1.8); opacity:.6; transition:all .25s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1) brightness(1.8)';this.style.opacity='.6'"></div>
-      <div style="background:var(--navy-card); padding:28px 20px; display:flex; align-items:center; justify-content:center;" class="fade-up"><img src="assets/img/clients/Insurance.png" alt="Insurance" style="max-height:40px; width:auto; filter:grayscale(1) brightness(1.8); opacity:.6; transition:all .25s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1) brightness(1.8)';this.style.opacity='.6'"></div>
-      <div style="background:var(--navy-card); padding:28px 20px; display:flex; align-items:center; justify-content:center;" class="fade-up"><img src="assets/img/clients/Education.png" alt="Education" style="max-height:40px; width:auto; filter:grayscale(1) brightness(1.8); opacity:.6; transition:all .25s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1) brightness(1.8)';this.style.opacity='.6'"></div>
-      <div style="background:var(--navy-card); padding:28px 20px; display:flex; align-items:center; justify-content:center;" class="fade-up"><img src="assets/img/clients/Retail.png" alt="Retail" style="max-height:40px; width:auto; filter:grayscale(1) brightness(1.8); opacity:.6; transition:all .25s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1) brightness(1.8)';this.style.opacity='.6'"></div>
-      <div style="background:var(--navy-card); padding:28px 20px; display:flex; align-items:center; justify-content:center;" class="fade-up"><img src="assets/img/clients/Construction.png" alt="Construction" style="max-height:40px; width:auto; filter:grayscale(1) brightness(1.8); opacity:.6; transition:all .25s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1) brightness(1.8)';this.style.opacity='.6'"></div>
-      <div style="background:var(--navy-card); padding:28px 20px; display:flex; align-items:center; justify-content:center;" class="fade-up"><img src="assets/img/clients/Logistics.png" alt="Logistics" style="max-height:40px; width:auto; filter:grayscale(1) brightness(1.8); opacity:.6; transition:all .25s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1) brightness(1.8)';this.style.opacity='.6'"></div>
-      <div style="background:var(--navy-card); padding:28px 20px; display:flex; align-items:center; justify-content:center;" class="fade-up"><img src="assets/img/clients/Legal.png" alt="Legal" style="max-height:40px; width:auto; filter:grayscale(1) brightness(1.8); opacity:.6; transition:all .25s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1) brightness(1.8)';this.style.opacity='.6'"></div>
-      <div style="background:var(--navy-card); padding:28px 20px; display:flex; align-items:center; justify-content:center;" class="fade-up"><img src="assets/img/clients/Manufacturing.png" alt="Manufacturing" style="max-height:40px; width:auto; filter:grayscale(1) brightness(1.8); opacity:.6; transition:all .25s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1) brightness(1.8)';this.style.opacity='.6'"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ======= Blog Teaser ======= -->
-<section class="blog-sec">
-  <div class="container">
-    <div class="fade-up" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+    <div class="hm-insights-head fade-up">
       <div>
         <span class="label">Insights</span>
-        <h2 style="font-size:clamp(28px,3.5vw,44px); margin-bottom:0;">Latest from Our Team</h2>
+        <h2>Latest from our team</h2>
       </div>
-      <a href="/blog" class="btn-cta btn-cta-outline" style="border-color:var(--border); color:var(--text-2);">All Insights <i class="bi bi-arrow-right"></i></a>
+      <a href="blog.html" class="hm-link">All insights <i class="arr">→</i></a>
     </div>
-    <div class="blog-grid">
-      <div class="blog-card fade-up">
-        <div class="blog-card-img"><img src="assets/img/app3.jpg" alt="Analytics blog"></div>
-        <div class="blog-card-body">
-          <span class="blog-cat">Data Analytics</span>
-          <h3>How Predictive Analytics is Reshaping Agricultural Planning in East Africa</h3>
+    <div class="hm-ins-grid">
+      <a href="blog.html" class="hm-ins-card fade-up">
+        <div class="hm-ins-img"><img src="assets/img/photos/morris-charts.jpg" alt="Predictive analytics charts"></div>
+        <div class="hm-ins-body">
+          <span class="hm-ins-cat">Data Analytics</span>
+          <h3>How predictive analytics is reshaping agricultural planning in East Africa</h3>
           <p>Machine learning models are helping smallholder farmers and NGOs anticipate seasonal yield gaps before they occur.</p>
-          <a href="/blog" class="blog-link">Read more <i class="bi bi-arrow-right"></i></a>
+          <span class="hm-link">Read more <i class="arr">→</i></span>
         </div>
-      </div>
-      <div class="blog-card fade-up">
-        <div class="blog-card-img"><img src="assets/img/app4.jpg" alt="Research blog"></div>
-        <div class="blog-card-body">
-          <span class="blog-cat">Research Methods</span>
-          <h3>Designing Rigorous Baseline Surveys for Development Programmes</h3>
+      </a>
+      <a href="blog.html" class="hm-ins-card fade-up">
+        <div class="hm-ins-img"><img src="assets/img/photos/calculator-charts.jpg" alt="Survey design worksheets"></div>
+        <div class="hm-ins-body">
+          <span class="hm-ins-cat">Research Methods</span>
+          <h3>Designing rigorous baseline surveys for development programmes</h3>
           <p>A practical guide to sampling strategy, questionnaire design and data quality assurance for M&amp;E practitioners.</p>
-          <a href="/blog" class="blog-link">Read more <i class="bi bi-arrow-right"></i></a>
+          <span class="hm-link">Read more <i class="arr">→</i></span>
         </div>
-      </div>
-      <div class="blog-card fade-up">
-        <div class="blog-card-img"><img src="assets/img/homepage_2.jpg" alt="Software blog"></div>
-        <div class="blog-card-body">
-          <span class="blog-cat">Software Solutions</span>
-          <h3>From Spreadsheets to Dashboards: The Case for Custom Analytics Platforms</h3>
+      </a>
+      <a href="blog.html" class="hm-ins-card fade-up">
+        <div class="hm-ins-img"><img src="assets/img/photos/blue-charts-desk.jpg" alt="Custom dashboard mockups on a desk"></div>
+        <div class="hm-ins-body">
+          <span class="hm-ins-cat">Software Solutions</span>
+          <h3>From spreadsheets to dashboards: the case for custom analytics platforms</h3>
           <p>Why organisations that invest in purpose-built data platforms see faster decisions and better programme outcomes.</p>
-          <a href="/blog" class="blog-link">Read more <i class="bi bi-arrow-right"></i></a>
+          <span class="hm-link">Read more <i class="arr">→</i></span>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ======= CTA Banner ======= -->
-<section class="cta-banner">
-  <div class="container fade-up">
-    <span class="label">Work With Us</span>
-    <h2>Ready to turn your data<br>into decisions?</h2>
-    <p>Whether you are launching a new programme, entering a new market, or building a data product from scratch — Stadi is your end-to-end partner. Let's talk.</p>
-    <a href="/contact" class="btn-cta btn-cta-primary">Start a Conversation <i class="bi bi-arrow-right"></i></a>
+<!-- ======= CTA ======= -->
+<section class="hm-cta" data-screen-label="CTA">
+  <div class="container">
+    <div class="hm-cta-grid fade-up">
+      <div>
+        <h2>Ready to turn your<br>data into decisions?</h2>
+        <p>Whether you are launching a programme, entering a market or building a data product from scratch — Stadi is your end-to-end partner.</p>
+      </div>
+      <div>
+        <a href="contact.html" class="btn-cta">Start a conversation <i class="arr">→</i></a>
+        <a href="mailto:info@stadilytics.com" class="hm-cta-mail">info@stadilytics.com</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ======= Footer ======= -->
 <footer id="footer">
   <div class="footer-top">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-4">
-          <div class="footer-brand">
-            <img src="assets/img/logo.svg" alt="Stadi Analytics">
-            <p>Research, analytics and custom software solutions that turn data into impact.</p>
-            <div class="footer-social">
-              <a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank"><i class="bi bi-linkedin"></i></a>
-              <a href="https://twitter.com/Stadi_Analytics" target="_blank"><i class="bi bi-twitter-x"></i></a>
-            </div>
-          </div>
+    <div class="container ft-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo.svg" alt="Stadi Research &amp; Analytics">
+        <p>Research, analytics and custom software solutions that turn data into impact.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/stadi-research-analytics/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://twitter.com/Stadi_Analytics" target="_blank" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
         </div>
-        <div class="col-lg-2 col-md-4">
-          <div class="footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a href="/blog">Insights</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4">
-          <div class="footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services">Baseline Survey</a></li>
-              <li><a href="/services">Solutions &amp; Applications</a></li>
-              <li><a href="/services">Business Analytics</a></li>
-              <li><a href="/services">Data Analytics</a></li>
-              <li><a href="/services">Training &amp; Capacity</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4">
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="mailto:hello@stadilytics.com">hello@stadilytics.com</a></li>
-              <li><a href="https://www.stadilytics.com" target="_blank">www.stadilytics.com</a></li>
-              <li><a href="#">Nairobi, Kenya</a></li>
-            </ul>
-          </div>
-        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Research &amp; Evaluation</a></li>
+          <li><a href="services.html">Data Analytics</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+          <li><a href="services.html">Solutions &amp; Applications</a></li>
+          <li><a href="services.html">Training &amp; Capacity</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@stadilytics.com">info@stadilytics.com</a></li>
+          <li><a href="https://www.stadilytics.com" target="_blank">www.stadilytics.com</a></li>
+          <li><a href="contact.html">Nairobi, Kenya</a></li>
+        </ul>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-      <p>&copy; 2025 Stadi Research &amp; Analytics. All rights reserved.</p>
-      <p style="color:var(--text-3);">Research &nbsp;·&nbsp; Analytics &nbsp;·&nbsp; Software</p>
+      <p>&copy; 2026 Stadi Research &amp; Analytics. All rights reserved.</p>
+      <p>Research · Analytics · Software</p>
     </div>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
