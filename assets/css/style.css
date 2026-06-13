@@ -29,7 +29,7 @@
   --font-b:     'Instrument Sans', sans-serif;
   --font-m:     'IBM Plex Mono', monospace;
   --ease:       cubic-bezier(.2,.8,.2,1);
-  --max-w:      1920px;
+  --max-w:      2400px;
 }
 
 /* ── Reset / base ───────────────────────────────────────── */
