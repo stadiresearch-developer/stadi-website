@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Stadi Website <onboarding@resend.dev>',
+      from: 'Stadi Research & Analytics <noreply@stadilytics.com>',
       to: 'hello@stadilytics.com',
       replyTo: email,
       subject: `New enquiry from ${fname} ${lname}${org ? ` (${org})` : ''}`,
